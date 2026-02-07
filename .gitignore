@@ -9,7 +9,7 @@ __pycache__/
 .env
 .venv/
 venv/
-
+backend/db/chroma
 # ===============================
 # OS / Editor
 # ===============================
@@ -45,3 +45,4 @@ backend/data/uploads/
 # Jupyter / Misc
 # ===============================
 .ipynb_checkpoints/
+
