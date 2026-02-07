@@ -8,6 +8,7 @@ __pycache__/
 *.log
 .env
 .venv/
+.venv311/
 venv/
 backend/db/chroma
 # ===============================
