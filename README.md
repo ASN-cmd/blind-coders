@@ -7,5 +7,5 @@
 
 1. **Clone repo:**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/policy-gap-analyzer.git
+   git clone https://github.com/ASN-cmd/blind-coders.git
    cd policy-gap-analyzer
