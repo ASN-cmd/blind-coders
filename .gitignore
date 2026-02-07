@@ -28,14 +28,6 @@ models/
 *.safetensors
 
 # ===============================
-# Vector Database (ChromaDB)
-# ===============================
-backend/db/chroma/
-chroma.sqlite3
-*.sqlite3
-*.bin
-
-# ===============================
 # Generated / Runtime Data
 # ===============================
 backend/data/outputs/
