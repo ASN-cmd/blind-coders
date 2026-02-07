@@ -1,0 +1,7 @@
+llama-cpp-python
+sentence-transformers
+chromadb
+pypdf2
+python-docx
+requests
+tqdm
