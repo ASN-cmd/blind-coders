@@ -7,5 +7,9 @@
 
 1. **Clone repo:**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/policy-gap-analyzer.git
-   cd policy-gap-analyzer
+   git clone https://github.com/ASN-cmd/blind-coders.git
+   
+2. **Download Model:**
+   ```bash
+   python download_model.py
+   ```   
