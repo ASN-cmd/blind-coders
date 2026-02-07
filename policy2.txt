@@ -1,0 +1,15 @@
+Purpose:
+This policy defines how sensitive and personal data should be protected.
+
+Scope:
+Applies to all data stored, processed, or transmitted by the organization.
+
+Policy Statement:
+Sensitive and personal data must be handled securely and only accessed by authorized personnel.
+
+Employees must ensure that data is not shared with unauthorized individuals.
+
+Data should be stored securely to prevent unauthorized access.
+
+Compliance:
+Violations of this policy may lead to disciplinary action.
