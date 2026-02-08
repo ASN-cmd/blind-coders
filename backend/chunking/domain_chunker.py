@@ -29,16 +29,20 @@ def chunk_by_domain(policy_text: str) -> dict:
     # 3️⃣ NORMALIZE (this is what pipeline uses)
     normalized = {}
 
-    for domain, content in data.items():
-        if isinstance(content, list):
-            text = " ".join(item.strip() for item in content if item.strip())
-        elif isinstance(content, str):
-            text = content.strip()
-        else:
+    for domain, obj in data.items():
+        if not obj:
             continue
 
+        text_items = obj.get("text", [])
+        subdomains = obj.get("subdomains", [])
+
+        text = " ".join(t.strip() for t in text_items if t.strip())
+
         if text:
-            normalized[domain] = text
+            normalized[domain] = {
+                "text": text,
+                "subdomains": subdomains
+            }
 
     return normalized
 

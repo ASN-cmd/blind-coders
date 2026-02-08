@@ -10,6 +10,13 @@ cleaned_text = clean_text(raw_text)
 chunks = chunk_by_domain(cleaned_text)
 
 print("TOTAL DOMAIN CHUNKS:", len(chunks))
-for domain, text in chunks.items():
+for domain, obj in chunks.items():
     print("\n====", domain, "====")
-    print(text[:800])  # limit print size
+
+    print("\nSubdomains:")
+    for sd in obj.get("subdomains", []):
+        print("-", sd)
+
+    print("\nText:")
+    print(obj["text"][:800])  # now slicing the STRING
+
