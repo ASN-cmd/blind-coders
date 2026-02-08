@@ -13,7 +13,7 @@ from backend.embeddings.embedding_model import load_embedding_model
 # -------- Paths (SAFE & CORRECT) --------
 BASE_DIR = Path(__file__).resolve().parents[2]
 
-JSON_PATH = BASE_DIR / "backend" / "data" / "policy_chunks_with_subdomain.json"
+JSON_PATH = BASE_DIR / "backend" / "data" / "cis_policy_chunks_clean.json"
 DB_PATH = BASE_DIR / "backend" / "db" / "chroma"
 
 COLLECTION_NAME = "nist_controls"
@@ -49,7 +49,7 @@ for item in nist_data:
         metadatas=[{
             "domain": item.get("domain"),
             "subdomain": item.get("subdomain"),
-            "source_file": item.get("source_file")
+            "source": item.get("source")
         }],
         embeddings=[embedding]
     )
