@@ -1,33 +1,39 @@
 'use client'
 
-import { Bell, Search, Info } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { Bell, Search, Shield, ChevronRight } from 'lucide-react'
+import { Policy } from '@/components/features/analysis/PolicyDetailsModal'
 
-export function Header() {
+interface HeaderProps {
+    onSelectPolicy: (policy: Policy | null) => void
+}
+
+export function Header({ onSelectPolicy }: HeaderProps) {
     return (
-        <header className="h-16 flex items-center justify-between px-6 border-b border-[#1e293b] bg-[#0f172a]/95 backdrop-blur-sm sticky top-0 z-40 relative">
+        <header className="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-[#0B0B15]/60 backdrop-blur-xl sticky top-0 z-40 relative shadow-sm">
 
             {/* Context Links */}
             <div className="flex items-center gap-2 text-sm text-slate-400">
-                <span className="font-medium hover:text-white transition-colors cursor-pointer">Security Operations</span>
-                <span className="text-slate-600">/</span>
-                <span className="font-semibold text-white">Policy Analysis</span>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700/50 hover:border-[#F29F67]/30 transition-colors group cursor-pointer">
+                    <Shield className="w-4 h-4 text-[#F29F67] group-hover:text-[#F29F67] transition-colors" />
+                    <span className="font-medium bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent group-hover:to-white transition-all">Security Operations</span>
+                </div>
+                <ChevronRight className="w-4 h-4 text-slate-600" />
+                <span className="font-semibold text-white tracking-tight">Policy Analysis</span>
             </div>
 
             {/* Global Actions */}
             <div className="flex items-center gap-4">
 
-                <PolicySelector />
+                <PolicySelector onSelect={onSelectPolicy} />
 
-                <div className="w-px h-6 bg-[#1e293b] mx-2" />
+                <div className="w-px h-6 bg-slate-800 mx-2" />
 
-                <button className="relative p-2 rounded-full hover:bg-[#1e293b] text-slate-400 hover:text-white transition-colors group" suppressHydrationWarning>
-                    <Bell className="w-5 h-5" />
-                    <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full border border-[#0f172a]" />
+                <button className="relative p-2 rounded-full hover:bg-slate-800/50 text-slate-400 hover:text-white transition-all group" suppressHydrationWarning>
+                    <Bell className="w-5 h-5 group-hover:text-[#F29F67] transition-colors" />
+                    <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-[#ef4444] rounded-full border-2 border-[#1E1E2C] shadow-lg shadow-[#ef4444]/20 animate-pulse" />
                 </button>
 
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-medium text-sm cursor-pointer hover:bg-blue-700 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#F29F67] to-[#3B8FF3] flex items-center justify-center text-white font-bold text-sm cursor-pointer shadow-lg shadow-[#F29F67]/20 hover:shadow-[#F29F67]/40 hover:scale-105 transition-all ring-2 ring-white/10">
                     JD
                 </div>
 
@@ -37,106 +43,77 @@ export function Header() {
     )
 }
 
-function PolicySelector() {
-    const [selected, setSelected] = useState<string | null>(null)
+function PolicySelector({ onSelect }: { onSelect: (p: Policy | null) => void }) {
 
-    const policies = [
+    // Using hardcoded policies for now, could be fetched or passed efficiently
+    const policies: Policy[] = [
         {
-            id: 'AC',
-            name: 'Access Control (AC)',
-            definition: 'Limit information system access to authorized users, processes acting on behalf of authorized users, or devices (including other information systems) and to the types of transactions and functions that authorized users are permitted to exercise.'
+            id: 'AC-1',
+            name: 'Access Control Policy and Procedures',
+            definition: 'Limit information system access to authorized users, processes acting on behalf of authorized users, or devices (including other information systems) and to the types of transactions and functions that authorized users are permitted to exercise.',
+            type: 'Technical',
+            priority: 'High',
+            family: 'Access Control (AC)'
         },
         {
-            id: 'IA',
-            name: 'Identification & Auth (IA)',
-            definition: 'Identify information system users, processes acting on behalf of users, or devices and authenticate (or verify) the identities of those users, processes, or devices, as a prerequisite to allowing access to organizational information systems.'
+            id: 'IA-2',
+            name: 'Identification & Authentication',
+            definition: 'Identify information system users, processes acting on behalf of users, or devices and authenticate (or verify) the identities of those users, processes, or devices, as a prerequisite to allowing access to organizational information systems.',
+            type: 'Technical',
+            priority: 'Critical',
+            family: 'Identification & Auth (IA)'
         },
         {
-            id: 'IR',
-            name: 'Incident Response (IR)',
-            definition: 'Establish an operational incident handling capability for organizational information systems that includes adequate preparation, detection, analysis, containment, recovery, and user response activities.'
+            id: 'IR-4',
+            name: 'Incident Handling',
+            definition: 'Establish an operational incident handling capability for organizational information systems that includes adequate preparation, detection, analysis, containment, recovery, and user response activities.',
+            type: 'Operational',
+            priority: 'High',
+            family: 'Incident Response (IR)'
         },
         {
-            id: 'RA',
-            name: 'Risk Assessment (RA)',
-            definition: 'Periodically assess the risk to organizational operations (including mission, functions, image, or reputation), organizational assets, and individuals, resulting from the operation of organizational information systems and the associated processing, storage, or transmission of organizational information.'
+            id: 'RA-3',
+            name: 'Risk Assessment',
+            definition: 'Periodically assess the risk to organizational operations (including mission, functions, image, or reputation), organizational assets, and individuals, resulting from the operation of organizational information systems and the associated processing, storage, or transmission of organizational information.',
+            type: 'Management',
+            priority: 'Medium',
+            family: 'Risk Assessment (RA)'
         },
     ]
 
+    const handleSelect = (e: any) => {
+        const selectedId = e.target.value;
+        console.log("Policy Selected:", selectedId);
+        const p = policies.find(x => x.id === selectedId) || null
+        if (p) {
+            console.log("Found Policy:", p);
+            onSelect(p);
+        } else {
+            console.warn("Policy not found for ID:", selectedId);
+            onSelect(null);
+        }
+    };
+
     return (
-        <>
-            <div className="relative group hidden sm:block">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Search className="h-4 w-4 text-slate-500" />
-                </div>
-                <select
-                    onChange={(e) => setSelected(e.target.value)}
-                    value={selected || ""}
-                    className="bg-[#1e293b] border border-[#334155] text-white text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-64 pl-10 p-2 appearance-none cursor-pointer hover:bg-[#2d3a4f] transition-colors"
-                >
-                    <option value="" disabled>Select Policy Family...</option>
-                    {policies.map(p => (
-                        <option key={p.id} value={p.id}>{p.name}</option>
-                    ))}
-                </select>
+        <div className="relative group hidden sm:block">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none transition-colors group-focus-within:text-[#F29F67]">
+                <Search className="h-4 w-4 text-slate-500 group-hover:text-slate-400 transition-colors" />
             </div>
-
-            {/* Details Modal */}
-            <AnimatePresence>
-                {selected && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            className="bg-[#1e293b] border border-[#334155] rounded-xl shadow-2xl max-w-lg w-full overflow-hidden"
-                        >
-                            <div className="p-6">
-                                <div className="flex justify-between items-start mb-4">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-500">
-                                            <Info className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-bold text-white">
-                                                {policies.find(p => p.id === selected)?.name}
-                                            </h3>
-                                            <span className="text-xs text-slate-400 font-mono">NIST SP 800-53 Rev. 5</span>
-                                        </div>
-                                    </div>
-                                    <button
-                                        onClick={() => setSelected(null)}
-                                        className="text-slate-400 hover:text-white transition-colors"
-                                    >
-                                        <span className="sr-only">Close</span>
-                                        <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <div className="space-y-4">
-                                    <div className="p-4 bg-[#0f172a] rounded-lg border border-[#334155]">
-                                        <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Control Definition</h4>
-                                        <p className="text-slate-300 text-sm leading-relaxed">
-                                            {policies.find(p => p.id === selected)?.definition}
-                                        </p>
-                                    </div>
-
-                                    <div className="flex justify-end">
-                                        <button
-                                            onClick={() => setSelected(null)}
-                                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
-                                        >
-                                            Close Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                )}
-            </AnimatePresence>
-        </>
+            <select
+                onChange={handleSelect}
+                value="" // Controlled component: always show placeholder state
+                className="bg-[#252536]/50 border border-slate-700/50 text-slate-300 text-sm rounded-xl focus:ring-2 focus:ring-[#F29F67]/50 focus:border-[#F29F67]/50 block w-72 pl-10 p-2.5 appearance-none cursor-pointer hover:bg-[#252536] hover:border-slate-600 transition-all shadow-sm outline-none"
+            >
+                <option value="" disabled>Search Security Controls...</option>
+                {policies.map(p => (
+                    <option key={p.id} value={p.id}>{p.name}</option>
+                ))}
+            </select>
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <kbd className="hidden md:inline-flex h-5 items-center gap-1 rounded border border-slate-700 bg-slate-800 px-1.5 font-mono text-[10px] font-medium text-slate-400 opacity-50">
+                    <span className="text-xs">⌘</span>K
+                </kbd>
+            </div>
+        </div>
     )
 }

@@ -13,7 +13,7 @@ from backend.embeddings.embedding_model import load_embedding_model
 # -------- Paths (SAFE & CORRECT) --------
 BASE_DIR = Path(__file__).resolve().parents[2]
 
-JSON_PATH = BASE_DIR / "backend" / "data" / "policy_chunks_with_subdomain.json"
+JSON_PATH = BASE_DIR / "backend" / "data" / "cis_policy_chunks_clean.json"
 DB_PATH = BASE_DIR / "backend" / "db" / "chroma"
 
 COLLECTION_NAME = "nist_controls"

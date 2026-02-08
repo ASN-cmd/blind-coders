@@ -70,10 +70,11 @@ export function UploadZone({ onSuccess }: UploadProps) {
     }
 
     return (
-        <div className="w-full bg-[#1e293b] border border-[#334155] rounded-xl overflow-hidden shadow-xl">
+        <div className="w-full bg-[#151520]/60 backdrop-blur-md border border-white/5 rounded-xl overflow-hidden shadow-2xl relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F29F67]/5 via-transparent to-[#3B8FF3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             {/* Header */}
-            <div className="px-6 py-4 border-b border-[#334155] bg-[#0f172a]">
+            <div className="px-6 py-4 border-b border-white/5 bg-[#0B0B15]/50 relative z-10">
                 <div className="flex justify-between items-start mb-1">
                     <h3 className="font-semibold text-white">Import Policy Document</h3>
                     <Badge label="NIST SP 800-53" variant="primary" />
@@ -86,9 +87,9 @@ export function UploadZone({ onSuccess }: UploadProps) {
             <div className="p-8">
                 <label
                     className={cn(
-                        "relative border-2 border-dashed rounded-lg p-16 transition-all flex flex-col items-center justify-center cursor-pointer group hover:bg-[#1e293b]/50",
-                        status === 'idle' ? "border-[#334155] hover:border-blue-500 hover:bg-blue-900/5" : "border-transparent bg-[#0f172a]",
-                        status === 'error' && "border-rose-500/50 bg-rose-900/10"
+                        "relative border-2 border-dashed rounded-lg p-16 transition-all flex flex-col items-center justify-center cursor-pointer group hover:bg-[#F29F67]/5",
+                        status === 'idle' ? "border-slate-700 hover:border-[#F29F67] hover:shadow-[0_0_20px_rgba(242,159,103,0.1)]" : "border-transparent bg-[#0B0B15]/50",
+                        status === 'error' && "border-[#ef4444]/50 bg-[#ef4444]/5"
                     )}
                 >
                     <input
@@ -105,11 +106,11 @@ export function UploadZone({ onSuccess }: UploadProps) {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="text-center space-y-4"
                             >
-                                <div className="w-16 h-16 rounded-full bg-blue-600/10 flex items-center justify-center mx-auto text-blue-500 group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 rounded-full bg-[#F29F67]/10 flex items-center justify-center mx-auto text-[#F29F67] group-hover:scale-110 transition-transform">
                                     <UploadCloud className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <p className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors">Click to upload or drag and drop</p>
+                                    <p className="text-lg font-medium text-white group-hover:text-[#F29F67] transition-colors">Click to upload or drag and drop</p>
                                     <p className="text-slate-400 text-sm mt-1">PDF documents only (max 10MB)</p>
                                 </div>
                             </motion.div>
@@ -121,20 +122,20 @@ export function UploadZone({ onSuccess }: UploadProps) {
                                 animate={{ opacity: 1 }}
                                 className="w-full max-w-lg space-y-6 text-center"
                             >
-                                <div className="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                                <div className="flex items-center justify-center gap-3 text-[#F29F67] font-medium">
                                     <Loader2 className="w-5 h-5 animate-spin" />
                                     <span>{status === 'uploading' ? 'Uploading...' : 'Analyzing Policy Content'}</span>
                                 </div>
 
                                 <div className="w-full bg-[#334155] h-2 rounded-full overflow-hidden">
                                     <motion.div
-                                        className="h-full bg-blue-500 rounded-full"
+                                        className="h-full bg-[#F29F67] rounded-full"
                                         initial={{ width: 0 }}
                                         animate={{ width: `${progress}%` }}
                                     />
                                 </div>
 
-                                <div className="text-xs text-slate-500 font-mono bg-[#0f172a] py-2 px-4 rounded border border-[#334155]">
+                                <div className="text-xs text-slate-500 font-mono bg-[#1E1E2C] py-2 px-4 rounded border border-[#334155]">
                                     {logs[logs.length - 1]}
                                 </div>
                             </motion.div>
@@ -146,7 +147,7 @@ export function UploadZone({ onSuccess }: UploadProps) {
                                 animate={{ scale: 1, opacity: 1 }}
                                 className="text-center"
                             >
-                                <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto text-emerald-500 mb-4">
+                                <div className="w-16 h-16 rounded-full bg-[#34B1AA]/10 flex items-center justify-center mx-auto text-[#34B1AA] mb-4">
                                     <CheckCircle2 className="w-8 h-8" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Analysis Complete</h3>
@@ -156,11 +157,11 @@ export function UploadZone({ onSuccess }: UploadProps) {
 
                         {status === 'error' && (
                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-                                <div className="w-16 h-16 rounded-full bg-rose-500/10 flex items-center justify-center mx-auto text-rose-500 mb-4">
+                                <div className="w-16 h-16 rounded-full bg-[#ef4444]/10 flex items-center justify-center mx-auto text-[#ef4444] mb-4">
                                     <AlertCircle className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-lg font-bold text-white text-rose-500">Upload Failed</h3>
-                                <p className="text-rose-400/80 text-sm mt-2 max-w-xs mx-auto">
+                                <h3 className="text-lg font-bold text-white text-[#ef4444]">Upload Failed</h3>
+                                <p className="text-[#ef4444]/80 text-sm mt-2 max-w-xs mx-auto">
                                     {logs[logs.length - 1]}
                                 </p>
                                 <button
