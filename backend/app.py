@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
-from routes.upload_routes import upload_bp
-from routes.health_routes import health_bp
+from backend.routes.upload_routes import upload_bp
+from backend.routes.health_routes import health_bp
 import os
 def create_app():
     app = Flask(__name__)

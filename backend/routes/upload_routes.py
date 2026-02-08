@@ -1,6 +1,6 @@
 import os
 from flask import Blueprint, request, current_app, Response
-from utils.file_utils import allowed_file
+from backend.utils.file_utils import allowed_file
 from backend.services.pdf_pipeline import process_pdf
 
 upload_bp = Blueprint("upload", __name__)
