@@ -70,12 +70,17 @@ export function UploadZone({ onSuccess }: UploadProps) {
     }
 
     return (
-        <div className="w-full max-w-3xl mx-auto bg-[#1e293b] border border-[#334155] rounded-xl overflow-hidden shadow-xl">
+        <div className="w-full bg-[#1e293b] border border-[#334155] rounded-xl overflow-hidden shadow-xl">
 
             {/* Header */}
-            <div className="px-6 py-4 border-b border-[#334155] bg-[#0f172a] flex justify-between items-center">
-                <h3 className="font-semibold text-white">Import Policy Document</h3>
-                <Badge label="NIST SP 800-53" variant="primary" />
+            <div className="px-6 py-4 border-b border-[#334155] bg-[#0f172a]">
+                <div className="flex justify-between items-start mb-1">
+                    <h3 className="font-semibold text-white">Import Policy Document</h3>
+                    <Badge label="NIST SP 800-53" variant="primary" />
+                </div>
+                <p className="text-sm text-slate-400">
+                    Upload organizational policy documents for automated analysis against NIST SP 800-53 control requirements.
+                </p>
             </div>
 
             <div className="p-8">
