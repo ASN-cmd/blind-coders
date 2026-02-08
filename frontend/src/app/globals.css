@@ -6,24 +6,26 @@
   --font-mono: "JetBrains Mono", monospace;
 
   /* Enterprise Security Dark Palette */
-  --color-canvas-base: #0f172a;
-  /* Deep Navy Background */
-  --color-canvas-subtle: #1e293b;
-  /* Sidebar/Panel Background */
+  --color-canvas-base: #0B0B15;
+  /* Deep Midnight Navy (Darker Base) */
+  --bg-gradient-main: radial-gradient(circle at 50% 0%, #171726 0%, #0B0B15 100%);
+
+  --color-canvas-subtle: #151520;
+  /* Slightly Lighter Background */
   --color-border-subtle: #334155;
   /* Subtle Divider */
   --color-border-hover: #475569;
   /* Hover State */
 
-  --color-brand-primary: #3b82f6;
-  /* Professional Blue */
-  --color-brand-secondary: #6366f1;
-  /* Indigo Accent */
+  --color-brand-primary: #F29F67;
+  /* Peach/Orange */
+  --color-brand-secondary: #3B8FF3;
+  /* Blue */
 
-  --color-status-success: #10b981;
-  /* Valid Green */
-  --color-status-warning: #f59e0b;
-  /* Attention Yellow */
+  --color-status-success: #34B1AA;
+  /* Teal */
+  --color-status-warning: #E0B50F;
+  /* Mustard/Yellow */
   --color-status-danger: #ef4444;
   /* Critical Red */
 
@@ -38,6 +40,7 @@
 @layer base {
   body {
     font-family: var(--font-inter);
+    background: var(--bg-gradient-main);
     background-color: var(--color-canvas-base);
     color: var(--color-fg-primary);
     -webkit-font-smoothing: antialiased;
@@ -45,11 +48,26 @@
 }
 
 /* Glass Surface (Subtle) */
+/* Glass Surface (Modern & Clean) */
 .glass-panel {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: rgba(21, 21, 32, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(21, 21, 32, 0.8);
+  border-color: rgba(242, 159, 103, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Peach Glow Gradient Text */
+.text-gradient-peach {
+  background: linear-gradient(135deg, #F29F67 0%, #E0B50F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Refined Typography */

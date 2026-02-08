@@ -2,7 +2,7 @@
 from llama_cpp import Llama
 
 model = Llama(
-    model_path="models/Mistral-7B-Instruct-v0.3-Q5_K_M.gguf",
+    model_path="../models/Mistral-7B-Instruct-v0.3-Q5_K_M.gguf",
     n_ctx=2048,
     n_threads=4
 )

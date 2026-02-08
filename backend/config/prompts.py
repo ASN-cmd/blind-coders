@@ -153,5 +153,6 @@ Return a JSON object with the following structure:
 }}
 
 Be specific, actionable, and reference exact NIST controls where applicable.
+Give answer in 15 lines or less.
 """
 

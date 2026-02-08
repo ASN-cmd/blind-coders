@@ -1,17 +1,23 @@
-from ctransformers import AutoModelForCausalLM
+from llama_cpp import Llama
 from pathlib import Path
+import os
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MODEL_PATH = PROJECT_ROOT / "models" / "Mistral-7B-Instruct-v0.3-Q5_K_M.gguf"
 
-llm = AutoModelForCausalLM.from_pretrained(
-    str(MODEL_PATH),
-    model_type="mistral",
-    max_new_tokens=512,
-    context_length=2048,
-    temperature=0.2,
-    local_files_only=True
+llm = Llama(
+    model_path=str(MODEL_PATH),
+    n_ctx=2048,            # context window
+    n_threads=os.cpu_count(),           # adjust to your CPU cores
+    n_gpu_layers=0,        # set >0 only if CUDA build is available
+    verbose=False
 )
 
 def call_llm(prompt: str) -> str:
-    return llm(prompt).strip()
+    response = llm(
+        prompt,
+        max_tokens=800,
+        temperature=0.0,
+        stop=["</s>"]        # important for Mistral
+    )
+    return response["choices"][0]["text"].strip()

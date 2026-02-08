@@ -7,8 +7,11 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 DB_PATH = BASE_DIR / "backend" / "db" / "chroma"
 COLLECTION_NAME = "nist_controls"
 
+_client = PersistentClient(path=str(DB_PATH))
+_collection = _client.get_collection(name=COLLECTION_NAME)
 
-def fetch_related_nist_records(subdomain: str, domain: str = None, top_k: int = 10):
+
+def fetch_related_nist_records(subdomain: str, domain: str = None, top_k: int = 3):
     """
     Fetch related NIST records from ChromaDB based on subdomain.
     Uses metadata filtering to find exact subdomain matches.
@@ -21,8 +24,8 @@ def fetch_related_nist_records(subdomain: str, domain: str = None, top_k: int = 
     Returns:
         List of dictionaries with 'id', 'text', 'metadata'
     """
-    client = PersistentClient(path=str(DB_PATH))
-    collection = client.get_collection(name=COLLECTION_NAME)
+    collection = _collection
+
     
     # Build where clause
     where_clause = {"subdomain": subdomain}
@@ -51,7 +54,7 @@ def fetch_related_nist_records(subdomain: str, domain: str = None, top_k: int = 
     return records
 
 
-def fetch_similar_nist_records(policy_text: str, subdomain: str = None, top_k: int = 5):
+def fetch_similar_nist_records(policy_text: str, subdomain: str = None, top_k: int = 3):
     """
     Fetch similar NIST records using semantic search.
     
@@ -64,8 +67,8 @@ def fetch_similar_nist_records(policy_text: str, subdomain: str = None, top_k: i
         List of dictionaries with 'id', 'text', 'metadata', 'similarity'
     """
     embedder = load_embedding_model()
-    client = PersistentClient(path=str(DB_PATH))
-    collection = client.get_collection(name=COLLECTION_NAME)
+    collection = _collection
+
     
     # Create embedding for the input policy text
     query_embedding = embedder.encode(policy_text).tolist()

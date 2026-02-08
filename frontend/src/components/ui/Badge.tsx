@@ -9,10 +9,10 @@ interface BadgeProps {
 
 export function Badge({ label, variant = 'default', className, icon: Icon }: BadgeProps) {
     const styles = {
-        primary: 'text-blue-400 bg-blue-900/10 border-blue-500/20',
-        success: 'text-emerald-400 bg-emerald-900/10 border-emerald-500/20',
-        warning: 'text-amber-400 bg-amber-900/10 border-amber-500/20',
-        danger: 'text-rose-400 bg-rose-900/10 border-rose-500/20',
+        primary: 'text-[#3B8FF3] bg-[#3B8FF3]/10 border-[#3B8FF3]/20',
+        success: 'text-[#34B1AA] bg-[#34B1AA]/10 border-[#34B1AA]/20',
+        warning: 'text-[#E0B50F] bg-[#E0B50F]/10 border-[#E0B50F]/20',
+        danger: 'text-[#ef4444] bg-[#ef4444]/10 border-[#ef4444]/20',
         default: 'text-slate-400 bg-slate-800/20 border-slate-700/30'
     }
 

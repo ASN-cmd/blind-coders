@@ -8,7 +8,7 @@ export function ComplianceChart() {
     const circumference = 2 * Math.PI * 40 // radius 40
 
     return (
-        <div className="bg-[#1e293b] border border-[#334155] p-6 rounded-xl h-full flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="bg-[#151520]/60 backdrop-blur-md border border-white/5 p-6 rounded-xl h-full flex flex-col items-center justify-center relative overflow-hidden transition-all hover:border-[#F29F67]/20 hover:shadow-lg group">
             <h3 className="text-slate-400 font-medium text-sm uppercase tracking-wide mb-6 absolute top-6 left-6">Audit Readiness</h3>
 
             <div className="relative w-48 h-48 flex items-center justify-center">
@@ -36,12 +36,12 @@ export function ComplianceChart() {
                         fill="transparent"
                         strokeDasharray={circumference}
                         strokeLinecap="round"
-                        className="text-emerald-500"
+                        className="text-[#34B1AA]"
                     />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <span className="text-4xl font-bold text-white">{percentage}%</span>
-                    <span className="text-xs text-emerald-500 font-medium">Ready</span>
+                    <span className="text-xs text-[#34B1AA] font-medium">Ready</span>
                 </div>
             </div>
 
@@ -54,14 +54,14 @@ export function ComplianceChart() {
 
 export function RiskBarChart() {
     const data = [
-        { label: 'Access Control (AC)', value: 92, color: 'bg-blue-500' },
-        { label: 'Incident Response (IR)', value: 65, color: 'bg-amber-500' },
-        { label: 'Sys & Comm (SC)', value: 78, color: 'bg-purple-500' },
-        { label: 'Identification (IA)', value: 88, color: 'bg-emerald-500' },
+        { label: 'Access Control (AC)', value: 92, color: 'bg-[#3B8FF3]' },
+        { label: 'Incident Response (IR)', value: 65, color: 'bg-[#E0B50F]' },
+        { label: 'Sys & Comm (SC)', value: 78, color: 'bg-[#F29F67]' },
+        { label: 'Identification (IA)', value: 88, color: 'bg-[#34B1AA]' },
     ]
 
     return (
-        <div className="bg-[#1e293b] border border-[#334155] p-6 rounded-xl h-full flex flex-col">
+        <div className="bg-[#151520]/60 backdrop-blur-md border border-white/5 p-6 rounded-xl h-full flex flex-col transition-all hover:border-[#F29F67]/20 hover:shadow-lg group">
             <h3 className="text-slate-400 font-medium text-sm uppercase tracking-wide mb-6">Control Family Maturity</h3>
 
             <div className="space-y-5 flex-1 justify-center flex flex-col">
@@ -71,7 +71,7 @@ export function RiskBarChart() {
                             <span className="text-slate-300 font-medium">{item.label}</span>
                             <span className="text-slate-400">{item.value}%</span>
                         </div>
-                        <div className="h-2.5 bg-[#0f172a] rounded-full overflow-hidden">
+                        <div className="h-2.5 bg-[#1E1E2C] rounded-full overflow-hidden">
                             <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: `${item.value}%` }}
