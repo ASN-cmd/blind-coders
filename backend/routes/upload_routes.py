@@ -1,21 +1,22 @@
 import os
-from flask import Blueprint, request, jsonify, current_app
+from flask import Blueprint, request, current_app, Response
 from utils.file_utils import allowed_file
+from backend.services.pdf_pipeline import process_pdf
 
 upload_bp = Blueprint("upload", __name__)
 
 @upload_bp.route("/upload-pdf", methods=["POST"])
 def upload_pdf():
     if "file" not in request.files:
-        return jsonify({"error": "No file part"}), 400
+        return Response("ERROR: No file part", mimetype="text/plain", status=400)
 
     file = request.files["file"]
 
     if file.filename == "":
-        return jsonify({"error": "No selected file"}), 400
+        return Response("ERROR: No selected file", mimetype="text/plain", status=400)
 
     if not allowed_file(file.filename):
-        return jsonify({"error": "Only PDF files are allowed"}), 400
+        return Response("ERROR: Only PDF files are allowed", mimetype="text/plain", status=400)
 
     upload_folder = current_app.config["UPLOAD_FOLDER"]
     os.makedirs(upload_folder, exist_ok=True)
@@ -23,7 +24,23 @@ def upload_pdf():
     file_path = os.path.join(upload_folder, file.filename)
     file.save(file_path)
 
-    return jsonify({
-        "message": "PDF uploaded successfully",
-        "filename": file.filename
-    }), 200
+    try:
+        domain_chunks = process_pdf(file_path)
+    except Exception as e:
+        return Response(
+            f"ERROR: PDF processing failed\n{str(e)}",
+            mimetype="text/plain",
+            status=500
+        )
+
+    # 🔹 Build TEXT output (same as print)
+    output_lines = []
+    output_lines.append(f"TOTAL DOMAIN CHUNKS: {len(domain_chunks)}")
+
+    for domain, text in domain_chunks.items():
+        output_lines.append(f"\n==== {domain} ====")
+        output_lines.append(text[:800])  # limit size
+
+    final_text = "\n".join(output_lines)
+
+    return Response(final_text, mimetype="text/plain", status=200)
