@@ -1,0 +1,913 @@
+================================================================================
+POLICY ANALYSIS REPORT
+Generated: 2026-02-08 11:25:35
+================================================================================
+
+--------------------------------------------------------------------------------
+INPUT POLICY TEXT
+--------------------------------------------------------------------------------
+Purpose:
+The purpose of this policy is to establish a framework for managing information security within the organization.
+
+Scope:
+This policy applies to all employees, contractors, and systems that handle organizational information.
+
+Objectives:
+- Protect organizational information assets
+- Reduce security risks
+- Ensure business continuity
+
+Policy Statement:
+The organization shall implement appropriate security controls to protect information assets from unauthorized access, disclosure, alteration, or destruction.
+
+Information security controls shall be reviewed periodically to ensure effectiveness.
+
+Compliance:
+All employees are expected to comply with this policy. Non-compliance may result in disciplinary action.
+
+--------------------------------------------------------------------------------
+DOMAIN INFERENCE RESULT
+--------------------------------------------------------------------------------
+Domain: Information Security Management System (ISMS)
+Subdomain: Information Security Policy
+Confidence: 0.95
+
+================================================================================
+RELATED RECORDS (Matching Subdomain: Information Security Policy)
+================================================================================
+
+Found 103 matching records:
+
+--- Record #1 ---
+ID: e821c972-f426-4c37-90d5-4c67112a0fab
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+1.0 Purpose and Benefits
+
+--- Record #2 ---
+ID: e354507b-64f0-42c0-85fb-db6096b3e69f
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+This policy defines the mandatory minimum information security requirements for the entity as defined below in Section 3.0 Scope. Any entity may, based on its individual business needs and specific legal and federal requirements, exceed the security requirements put forth in this document, but must, at a minimum, achieve the security levels required by this policy. This policy acts as an umbrella document to all other security policies and associated standards.  This policy defines the responsibility to: protect and maintain the confidentiality, integrity and availability of information and related infrastructure assets; manage the risk of security exposure or compromise; assure a secure and stable information technology (IT) environment; identify and respond to events involving information asset misuse, loss or unauthorized disclosure; monitor systems for anomalies that might indicate compromise; and promote and increase the awareness of information security. Failure to secure and protect the confidentiality, integrity and availability of information assets in today’s highly networked environment can damage or shut down systems that operate critical infrastructure, financial and business transactions and vital government functions; compromise data; and result in legal and regulatory non-compliance. This policy benefits entities by defining a framework that will assure appropriate measures are in place to protect the confidentiality, integrity and availability of data; and assure staff and all other affiliates understand their role and responsibilities, have adequate knowledge of security policy, procedures and practices and know how to protect information. 2.0 Authority [Organization information] 3.0 Scope This policy encompasses all systems, automated and manual, for which the entity has administrative responsibility, including systems managed or hosted by third parties on behalf of the entity. It addresses all information, regardless of the form or format, which is created or used in support of business activities. 4.0 Information Statement Organizational Security Information security requires both an information risk management function and an information technology security function.  Depending on the structure of the entity, an individual or group can serve in both roles or a separate individual or group can be designated for each role.  It is recommended that these functions be performed by a high-level executive or a group that includes high level executives.
+
+--- Record #3 ---
+ID: 174e9acf-b57b-4a59-af4f-ba20c1492fd4
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Each entity must designate an individual or group to be responsible for the risk management function assuring that: risk-related considerations for information assets and individual information systems, including authorization decisions, are viewed as an enterprise with regard to the overall strategic goals and objectives of carrying out its core missions and business functions; and the management of information assets and information system-related security risks is consistent, reflects the risk tolerance, and is considered along with other types of risks, to ensure mission/business success.
+
+--- Record #4 ---
+ID: fe42e2fc-3b0e-4776-ab51-ecd5f6e8e89c
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Each entity must designate an individual or group to be responsible for the technical information security function.   For purposes of clarity and readability, this policy will refer to the individual, or group, designated as the Information Security Officer (ISO)/designated security representative.  This function will be responsible for evaluating and advising on information security risks.
+
+--- Record #5 ---
+ID: cf9ac7a2-bf75-4d76-b62a-f37b7099f17a
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Information security risk decisions must be made through consultation with both function areas described in a. above. Although the technical information security function may be outsourced to third parties, each entity retains overall responsibility for the security of the information that it owns. Functional Responsibilities Executive management is responsible for: evaluating and accepting risk on behalf of the entity; identifying information security responsibilities and goals and integrating them into relevant processes; supporting the consistent implementation of information security policies and standards; supporting security through clear direction and demonstrated commitment of appropriate resources; promoting awareness of information security best practices through the regular dissemination of materials provided by the ISO/designated security representative; implementing the process for determining information classification and categorization, based on industry recommended practices, organization directives, and legal and regulatory requirements, to determine the appropriate levels of protection for that information; implementing the process for information asset identification, handling, use, transmission, and disposal based on information classification and categorization; determining who will be assigned and serve as information owners while maintaining ultimate responsibility for the confidentiality, integrity, and availability of the data; participating in the response to security incidents; complying with notification requirements in the event of a breach of private information; adhering to specific legal and regulatory requirements related to information security; communicating legal and regulatory requirements to the ISO/designated security representative; and communicating requirements of this policy and the associated standards, including the consequences of non-compliance, to the workforce and third parties, and addressing adherence in third party agreements. The ISO/designated security representative is responsible for: maintaining familiarity with business functions and requirements; maintaining an adequate level of current knowledge and proficiency in information security through annual Continuing Professional Education (CPE) credits directly related to information security; assessing compliance with information security policies and legal and regulatory information security requirements; evaluating and understanding information security risks and how to appropriately manage those risks; representing and assuring security architecture considerations are addressed; advising on security issues related to procurement of products and services; escalating security concerns that are not being adequately addressed according to the applicable reporting and escalation procedures; disseminating threat information to appropriate parties; participating in the response to potential security incidents; participating in the development of enterprise policies and standards  that considers the entity’s needs; and promoting information security awareness. IT management is responsible for: supporting security by providing clear direction and consideration of security controls in the data processing infrastructure and computing network(s) which support the information owners; providing resources needed to maintain a level of information security control consistent with this policy; identifying and implementing all processes, policies and controls relative to security requirements defined by the business and this policy; implementing the proper controls for information owned based on the classification designations; providing training to appropriate technical staff on secure operations (e.g., secure coding, secure configuration); fostering the participation of information security and technical staff in protecting information assets, and in identifying, selecting and implementing appropriate and cost-effective security controls and procedures; and implementing business continuity and disaster recovery plans. The workforce is responsible for: understanding the baseline information security controls necessary to protect the confidentiality, integrity and availability of information entrusted; protecting  information and resources from unauthorized use or disclosure; protecting personal, private, sensitive information from unauthorized use or disclosure; abiding by Acceptable Use of Information Technology Resources Policy reporting suspected information security incidents or weaknesses to the appropriate manager and ISO/designated security representative. The CISO is responsible for: providing in-house expertise as security consultants  as needed; developing the security program and strategy, including measures of effectiveness; establishing and maintaining enterprise information security policy and standards; assessing compliance with security policies and standards; advising on secure system engineering; providing incident response coordination and expertise; monitoring networks for anomalies; monitoring external sources for indications of data breaches, defacements, etc. maintaining ongoing contact with security groups/associations and relevant authorities; providing timely notification of current threats and vulnerabilities; and providing awareness materials and training resources. Separation of Duties
+
+--- Record #6 ---
+ID: cbde4344-63f3-4b5c-b502-03becd8ef7d8
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+To reduce the risk of accidental or deliberate system misuse, separation of duties and areas of responsibility must be implemented where appropriate.
+
+--- Record #7 ---
+ID: 978cb0fe-10a0-4fb6-9fbe-d0400f1bd9bb
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Whenever separation of duties is not technically feasible, other compensatory controls must be implemented, such as monitoring of activities, audit trails and management supervision.
+
+--- Record #8 ---
+ID: 9f4488e9-df73-4b80-be73-b2906f8e8678
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+The audit and approval of security controls must always remain independent and segregated from the implementation of security controls. Information Risk Management
+
+--- Record #9 ---
+ID: 30f6da94-27bf-48c7-bfb4-8e7461a4b58c
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Any system or process that supports business functions must be appropriately managed for information risk and undergo information risk assessments, at a minimum annually, as part of a secure system development life cycle. Information security risk assessments are required for new projects, implementations of new technologies, significant changes to the operating environment, or in response to the discovery of a significant vulnerability. Entities are responsible for selecting the risk assessment approach they will use based on their needs and any applicable laws, regulations, and policies.
+
+--- Record #10 ---
+ID: 282f7126-c445-4cfc-93ec-90bc8182eaf7
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Risk assessment results, and the decisions made based on these results, must be documented. Associated Standard:  Information Security Risk Management Standard; Secure System Development Lifecycle (SSDLC) Standard Information Classification and Handling
+
+--- Record #11 ---
+ID: c3faf081-7867-4c56-96cd-d05d6ef5e626
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All information, which is created, acquired or used in support of business activities, must only be used for its intended business purpose.
+
+--- Record #12 ---
+ID: 125537e5-4d83-471e-a8f4-0c5002d4f8c9
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All information assets must have an information owner established within the lines of business.
+
+--- Record #13 ---
+ID: 537a238e-b598-439c-995c-8f097c6521bd
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Information must be properly managed from its creation, through authorized use, to proper disposal.
+
+--- Record #14 ---
+ID: 532b0ab7-ae8b-41c3-9794-f83c2e50d9c6
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All information must be classified on an ongoing basis based on its confidentiality, integrity and availability characteristics.
+
+--- Record #15 ---
+ID: 1d5cc782-9fab-472a-bc8c-b337daf20737
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+An information asset must be classified based on the highest level necessitated by its individual data elements.
+
+--- Record #16 ---
+ID: f65dfc3b-8a0a-466b-8391-f2e21aa1982f
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+If the entity is unable to determine the confidentiality classification of information or the information is personal identifying information (PII) the information must have a high confidentiality classification and, therefore, is subject to high confidentiality controls.
+
+--- Record #17 ---
+ID: 3752d0a4-2f9e-4070-af59-9ffde0dc71d7
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Merging of information which creates a new information asset or situations that create the potential for merging (e.g., backup tape with multiple files) must be evaluated to determine if a new classification of the merged data is warranted.
+
+--- Record #18 ---
+ID: 74ed6a13-3361-46bb-8135-30365861b70b
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All reproductions of information in its entirety must carry the same confidentiality classification as the original. Partial reproductions need to be evaluated to determine if a new classification is warranted.
+
+--- Record #19 ---
+ID: ac2f439f-bd7e-4c01-90bc-179db59a3071
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Each classification has an approved set of baseline controls designed to protect these classifications and these controls must be followed.
+
+--- Record #20 ---
+ID: 406939b2-2fcc-4496-9404-177060b76908
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+The entity must communicate the requirements for secure handling of information to its workforce.
+
+--- Record #21 ---
+ID: dfb36af7-e97b-4d05-a7df-6c7190a52d01
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+A written or electronic inventory of all information assets must be maintained.
+
+--- Record #22 ---
+ID: 469b08e3-19a4-4d0f-aa72-cd761b3b1b7d
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Content made available to the general public must be reviewed according to a process that will be defined and approved by the entity. The process must include the review and approval of updates to publicly available content and must consider the type and classification of information posted.
+
+--- Record #23 ---
+ID: 966902cc-5bb1-458a-b242-a4a107b500a7
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+PPI must not be made available without appropriate safeguards approved by the entity.
+
+--- Record #24 ---
+ID: 94b4996d-0272-4549-88b1-0cba845cd39c
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+For non-public information to be released outside the entity or shared between other entities, a process must be established that, at a minimum: evaluates and documents the sensitivity of the information to be released or shared; identifies the responsibilities of each party for protecting the information; defines the minimum controls required to transmit and use the information; records the measures that each party has in place to protect the information; defines a method for compliance measurement; provides a signoff procedure for each party to accept responsibilities; and establishes a schedule and procedure for reviewing the controls. Associated Standards: Information Classification Standard; Sanitization/Secure Disposal Standard IT Asset Management
+
+--- Record #25 ---
+ID: 4c031922-cc4d-41f1-9f9a-66bae2367378
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All IT hardware and software assets must be assigned to a designated business unit or individual.
+
+--- Record #26 ---
+ID: 82bc2af7-f80b-4955-a135-dd39356ede82
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Entities are required to maintain an inventory of hardware and software assets, including all system components (e.g., network address, machine name, software version) at a level of granularity deemed necessary for tracking and reporting.  This inventory must be automated where technically feasible.
+
+--- Record #27 ---
+ID: 61abb702-4b08-458d-b122-650b5b317532
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Processes, including regular scanning, must be implemented to identify unauthorized hardware and/or software and notify appropriate staff when discovered. Associated Standard: Secure Configuration Standard Personnel Security
+
+--- Record #28 ---
+ID: 6cbfd076-2d06-4ff9-9edf-541669200a44
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+The workforce must receive general security awareness training, to include recognizing and reporting insider threats, within 30 days of hire.  Additional training on specific security procedures, if required, must be completed before access is provided to specific entity sensitive information not covered in the general security training.  All security training must be reinforced at least annually and must be tracked by the entity.
+
+--- Record #29 ---
+ID: ed4271d2-b2e4-48db-9beb-e09c69cc0258
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+An entity must require its workforce to abide by the Acceptable Use of Information Technology Resources Policy, and an auditable process must be in place for users to acknowledge that they agree to abide by the policy’s requirements.
+
+--- Record #30 ---
+ID: 34a8b823-1133-4071-a409-b47eb04a59ef
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All job positions must be evaluated by the to determine whether they require access to sensitive information and/or sensitive information technology assets.
+
+--- Record #31 ---
+ID: df596a63-ba14-40d2-bce6-2f2db8393bf1
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+For those job positions requiring access to sensitive information and sensitive information technology assets, entities must conduct workforce suitability determinations, unless prohibited from doing so by law, regulation or contract.  Depending on the risk level, suitability determinations may include, as appropriate and permissible, evaluation of criminal history record information or other reports from federal, state and private sources that maintain public and non-public records.  The suitability determination must provide reasonable grounds for the entity to conclude that an individual will likely be able to perform the required duties and responsibilities of the subject position without undue risk to the entity.
+
+--- Record #32 ---
+ID: b5d38dc2-a3e6-4991-a492-c7f85ed3676e
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+A process must be established within the entity to repeat or review suitability determinations periodically and upon change of job duties or position. Entities are responsible for ensuring all issued property is returned prior to an employee’s separation and accounts are disabled and access is removed immediately upon separation. Associated Standard: Account Management/Access Control Standard Cyber Incident Management
+
+--- Record #33 ---
+ID: 29936df0-8ad1-447b-be09-ad45a5c3a19e
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Entities must have an incident response plan, consistent standards, to effectively respond to security incidents. All observed or suspected information security incidents or weaknesses are to be reported to appropriate management and the ISO/designated security representative as quickly as possible.  If a member of the workforce feels that cyber security concerns are not being appropriately addressed, they may confidentially contact the Security Operations Center directly.
+
+--- Record #34 ---
+ID: 5a832947-9014-4eba-a4b9-b9adc074c6f3
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+The Security Operations Center must be notified of any cyber incident which may have a significant or severe impact on operations or security, or which involves digital forensics, to follow proper incident response procedures and guarantee coordination and oversight. Associated Standard: Cyber Incident Response Standard Physical and Environmental Security
+
+--- Record #35 ---
+ID: b050b149-4ca7-46b4-a432-55d1db839cd7
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Information processing and storage facilities must have a defined security perimeter and appropriate security barriers and access controls.
+
+--- Record #36 ---
+ID: 0e739120-b7b4-4455-85d7-1305bf371f88
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+A periodic risk assessment must be performed for information processing and storage facilities to determine whether existing controls are operating correctly and if additional physical security measures are necessary.  These measures must be implemented to mitigate the risks.
+
+--- Record #37 ---
+ID: 790d3d26-68dc-4e4a-bb89-d88b55484fb8
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Information technology equipment must be physically protected from security threats and environmental hazards. Special controls may also be necessary to protect supporting infrastructure and facilities such as electrical supply and cabling infrastructure.
+
+--- Record #38 ---
+ID: 2b38a46c-684c-4034-bdf4-a89d447196ee
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All information technology equipment and information media must be secured to prevent compromise of confidentiality, integrity, or availability in accordance with the classification of information contained therein.
+
+--- Record #39 ---
+ID: e0285f4e-ed92-4aaf-9c4e-54d5f36ab3d1
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Visitors to information processing and storage facilities, including maintenance personnel, must be escorted at all times. Associated Standard: Information Security Risk Management Standard Account Management and Access Control
+
+--- Record #40 ---
+ID: 45f1ca8b-5ca4-4eb8-a2b9-c1838eedb02c
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All accounts must have an individual employee or group assigned to be responsible for account management.  This may be a combination of the business unit and information technology (IT).
+
+--- Record #41 ---
+ID: 8722306f-a23a-479b-a089-4d6a0a0e4578
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Except as described in the, Account Management/Access Control Standard, access to systems must be provided through the use of individually assigned unique identifiers, known as user-IDs.
+
+--- Record #42 ---
+ID: 38dabb16-dc96-4b12-aa08-26f07f10fa34
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Associated with each user-ID is an authentication token (e.g., password, key fob, biometric) which must be used to authenticate the identity of the person or system requesting access.
+
+--- Record #43 ---
+ID: 48cb1696-b0bc-4896-b625-200fa6ee14d8
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Automated techniques and controls must be implemented to lock a session and require authentication or re-authentication after a period of inactivity for any system where authentication is required. Information on the screen must be replaced with publicly viewable information (e.g., screen saver, blank screen, clock) during the session lock.
+
+--- Record #44 ---
+ID: 10c36d09-3a65-42d4-a571-41a05196b1d3
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Automated techniques and controls must be implemented to terminate a session after specific conditions are met as defined in the Account Management/Access Control Standard.
+
+--- Record #45 ---
+ID: 58a54a0c-2865-4d0b-9e4c-47c9da6b0fd9
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Tokens used to authenticate a person or process must be treated as confidential and protected appropriately.
+
+--- Record #46 ---
+ID: d38f74a5-bb20-48fd-926f-aba0ea38a0d3
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Tokens must not be stored on paper, or in an electronic file, hand-held device or browser, unless they can be stored securely and the method of storing (e.g., password vault) has been approved by the ISO/designated security representative.
+
+--- Record #47 ---
+ID: ddfb2852-42e4-4344-96bd-f788f702ca63
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Information owners are responsible for determining who should have access to protected resources within their jurisdiction, and what those access privileges should be (read, update, etc.). Access privileges will be granted in accordance with the user’s job responsibilities and will be limited only to those necessary to accomplish assigned tasks in accordance with entity missions and business functions (i.e., least privilege).
+
+--- Record #48 ---
+ID: 2fc96081-1517-416d-a15c-5c34b8badc43
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Users of privileged accounts must use a separate, non-privileged account when performing normal business transactions (e.g., accessing the Internet, e-mail).
+
+--- Record #49 ---
+ID: b86a6c80-03e4-4d05-a231-48237db2f81a
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Logon banners must be implemented on all systems where that feature exists to inform all users that the system is for business or other approved use consistent with policy, and that user activities may be monitored and the user should have no expectation of privacy.
+
+--- Record #50 ---
+ID: 4f52107e-227b-4cd2-9e54-3362705d27c2
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Advance approval for any remote access connection must be provided by the entity.  An assessment must be performed and documented to determine the scope and method of access, the technical and business risks involved and the contractual, process and technical controls required for such connection to take place.
+
+--- Record #51 ---
+ID: 43747c22-1049-4d15-85b5-bbeceb452602
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All remote connections must be made through managed points-of-entry reviewed by the ISO/designated security representative.
+
+--- Record #52 ---
+ID: 657af088-41c3-4e92-b0da-9a8a0fed97df
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Working from a remote location must be authorized by management and practices which assure the appropriate protection of data in remote environments must be shared with the individual prior to the individual being granted remote access. Associated Standards: Account Management/Access Control Standard; Authentication Tokens Standard; Remote Access Standard; Security Logging Standard Systems Security Systems include but are not limited to servers, platforms, networks, communications, databases and software applications.
+
+--- Record #53 ---
+ID: b7e25caa-4aac-4619-beac-5fe12729a6b6
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+An individual or group must be assigned responsibility for maintenance and administration of any system deployed on behalf of the entity. A list of assigned individuals or groups must be centrally maintained.
+
+--- Record #54 ---
+ID: 0c274fa0-3f09-4b15-813f-f2a6d2c5e2df
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Security must be considered at system inception and documented as part of the decision to create or modify a system.
+
+--- Record #55 ---
+ID: 0397a303-2c83-4e6a-b814-d616e30a8c63
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All systems must be developed, maintained and decommissioned in accordance with a secure system development lifecycle (SSDLC).
+
+--- Record #56 ---
+ID: 55361a62-7df2-438d-8991-3cc7478dde02
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Each system must have a set of controls commensurate with the classification of any data that is stored on or passes through the system.
+
+--- Record #57 ---
+ID: f32504b9-0fae-469c-ae05-8ea9224562a1
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All system clocks must synchronize to a centralized reference time source set to UTC (Coordinated Universal Time) which is itself synchronized to at least three synchronized time sources.
+
+--- Record #58 ---
+ID: ef87971b-da78-4f97-8fcb-ce4d35c49a6c
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Environments and test plans must be established to validate the system works as intended prior to deployment in production. Separation of environments (e.g., development, test, quality assurance, production) is required, either logically or physically, including separate environmental identifications (e.g., desktop background, labels).
+
+--- Record #59 ---
+ID: b7426d5c-eb6c-45ca-92d9-fd86cb587d76
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Formal change control procedures for all systems must be developed, implemented and enforced. At a minimum, any change that may affect the production environment and/or production data must be included. Databases and Software (including in-house or third party developed and commercial off the shelf (COTS):
+
+--- Record #60 ---
+ID: 2df6043c-cfc2-4e54-bec6-24c97877dbcb
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All software written for or deployed on systems must incorporate secure coding practices, to avoid the occurrence of common coding vulnerabilities and to be resilient to high-risk threats, before being deployed in production.
+
+--- Record #61 ---
+ID: 2fb52e41-5491-4e65-b52a-3af7d5b9fda5
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Once test data is developed, it must be protected and controlled for the life of the testing in accordance with the classification of the data. Production data may be used for testing only if a business case is documented and approved in writing by the information owner and the following controls are applied: All security measures, including but not limited to access controls, system configurations and logging requirements for the production data are applied to the test environment and the data is deleted as soon as the testing is completed; or sensitive data is masked or overwritten with fictional information.
+
+--- Record #62 ---
+ID: 708f3600-e077-4433-8dae-38343e9e4378
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Where technically feasible, development software and tools must not be maintained on production systems.
+
+--- Record #63 ---
+ID: 30cc0a54-96da-4950-87fc-2f716baa7b3f
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Where technically feasible, source code used to generate an application or software must not be stored on the production system running that application or software.
+
+--- Record #64 ---
+ID: c6ab3d32-88f0-48f2-a10b-573453134fd3
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Scripts must be removed from production systems, except those required for the operation and maintenance of the system.
+
+--- Record #65 ---
+ID: abb43960-42d8-4b28-8185-beec2988183d
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Privileged access to production systems by development staff must be restricted.
+
+--- Record #66 ---
+ID: b523614b-eeca-4050-af37-d531050cad48
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Migration processes must be documented and implemented to govern the transfer of software from the development environment up through the production environment. Network Systems:
+
+--- Record #67 ---
+ID: 8089d2e4-7a3a-4752-afae-88d688af8f06
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Connections between systems must be authorized by the executive management of all relevant entities and protected by the implementation of appropriate controls.
+
+--- Record #68 ---
+ID: 78c232f3-0e88-42ab-9c32-d29b9281fd16
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All connections and their configurations must be documented and the documentation must be reviewed by the information owner and the ISO/designated security representative annually, at a minimum, to assure: the business case for the connection is still valid and the connection is still required; and the security controls in place (filters, rules, access control lists, etc.) are appropriate and functioning correctly.
+
+--- Record #69 ---
+ID: f1b9f4e2-20bf-42b9-a55f-4d45e6eecd7b
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+A network architecture must be maintained that includes, at a minimum, tiered network segmentation between: Internet accessible systems and internal systems; systems with high security categorizations (e.g., mission critical, systems containing PII) and other systems; and user and server segments.
+
+--- Record #70 ---
+ID: 754ec1a2-face-4d0a-8243-999dfce781fb
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Network management must be performed from a secure, dedicated network. Authentication is required for all users connecting to internal systems. Network authentication is required for all devices connecting to internal networks. Only authorized individuals or business units may capture or monitor network traffic.
+
+--- Record #71 ---
+ID: ecfcda2e-e786-426d-b2fd-71fca856e0b1
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+A risk assessment must be performed in consultation with the ISO/designated security representative before the initiation of, or significant change to, any network technology or project, including but not limited to wireless technology. Associated Standards:  Secure System Development Lifecycle Standard; Secure Coding Standard; Security Logging Standard; Secure Configuration Management Standard Collaborative Computing Devices
+
+--- Record #72 ---
+ID: 2b500fc5-2a11-436c-b193-9158110e6fb0
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Collaborative computing devices must: prohibit remote activation; and provide users physically present at the devices with an explicit indication of use.
+
+--- Record #73 ---
+ID: 86352f44-2815-4ec8-90e7-0d9c87cfa4f6
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Must provide simple methods to physically disconnect collaborative computing devices. Vulnerability Management
+
+--- Record #74 ---
+ID: 620f4c45-5bfc-446c-a39f-27c40cab66a2
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All systems must be scanned for vulnerabilities before being installed in production and periodically thereafter. All systems are subject to periodic penetration testing. Penetration tests are required periodically for all critical environments/systems.
+
+--- Record #75 ---
+ID: de9b6b67-8f1d-4581-a733-fa2b9dffb676
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Where the entity has outsourced a system to another entity or a third party, vulnerability scanning/penetration testing must be coordinated.
+
+--- Record #76 ---
+ID: 7bdf370a-8035-41b0-a314-ac8395f0dfa1
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Scanning/testing and mitigation must be included in third party agreements.
+
+--- Record #77 ---
+ID: a86419cd-8034-4781-980e-07c417f2a74b
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+The output of the scans/penetration tests will be reviewed in a timely manner by the system owner.  Copies of the scan report/penetration test must be shared with the ISO/designated security representative for evaluation of risk.
+
+--- Record #78 ---
+ID: 1d7f660f-be20-4957-83ab-14386ac7d28b
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Appropriate action, such as patching or updating the system, must be taken to address discovered vulnerabilities.  For any discovered vulnerability, a plan of action and milestones must be created, and updated accordingly, to document the planned remedial actions to mitigate vulnerabilities.
+
+--- Record #79 ---
+ID: 9bb7f6bb-58b4-4b18-8871-43ad47db83ca
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Any vulnerability scanning/penetration testing must be conducted by individuals who are authorized by the ISO/designated security representative.  The CISO must be notified in advance of any such tests.  Any other attempts to perform such vulnerability scanning/penetration testing will be deemed an unauthorized access attempt.
+
+--- Record #80 ---
+ID: 8df33b25-460a-4281-a264-ba4b5b08f317
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Anyone authorized to perform vulnerability scanning/penetration testing must have a formal process defined, tested and followed at all times to minimize the possibility of disruption. Associated Standards: Patch Management Standard; Vulnerability Scanning Standard Operations Security
+
+--- Record #81 ---
+ID: 4ddf28f9-b228-4b75-8dee-fd5d3e9cb500
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All systems and the physical facilities in which they are stored must have documented operating instructions, management processes and formal incident management procedures related to information security matters which define roles and responsibilities of affected individuals who operate or use them.
+
+--- Record #82 ---
+ID: fb39ad19-6860-4c8c-b89f-269e0e611e78
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+System configurations must follow approved configuration standards.
+
+--- Record #83 ---
+ID: 5fae7c01-8ced-44b6-adfb-8079840d237b
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Advance planning and preparation must be performed to ensure the availability of adequate capacity and resources.  System capacity must be monitored on an ongoing basis.
+
+--- Record #84 ---
+ID: 08054b76-2f38-4ba1-ad29-79d7410eedfc
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Where the entity provides a server, application or network service to another entity, operational and management responsibilities must be coordinated by all impacted entities.
+
+--- Record #85 ---
+ID: afd13e79-9a76-4f8b-b6a4-6f0ad08b8da5
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Host based firewalls must be installed and enabled on all workstations to protect from threats and to restrict access to only that which is needed
+
+--- Record #86 ---
+ID: ec209b13-5a84-4065-a876-f2127b1f9591
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Controls must be implemented (e.g., anti-virus, software integrity checkers, web filtering) across systems where technically feasible to prevent and detect the introduction of malicious code or other threats.
+
+--- Record #87 ---
+ID: fc022864-5861-439c-a3c5-f3add9340b25
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Controls must be implemented to disable automatic execution of content from removable media.
+
+--- Record #88 ---
+ID: 8c44fdcd-f693-4397-abfd-a6a75c99da17
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Controls must be implemented to limit storage of information to authorized locations.
+
+--- Record #89 ---
+ID: 43629c05-d08e-4d12-b4d6-640a767018d4
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Controls must be in place to allow only approved software to run on a system and prevent execution of all other software.
+
+--- Record #90 ---
+ID: 46722402-bb0a-4e4c-b257-342f86d42038
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All systems must be maintained at a vendor-supported level to ensure accuracy and integrity.
+
+--- Record #91 ---
+ID: 20e3e68b-d8c8-4fd9-8184-dab560ca2330
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+All security patches must be reviewed, evaluated and appropriately applied in a timely manner. This process must be automated, where technically possible.
+
+--- Record #92 ---
+ID: 9c5383f0-1d93-4278-9da1-768a7dc00270
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Systems which can no longer be supported or patched to current versions must be removed.
+
+--- Record #93 ---
+ID: 6baf09fb-6610-45d2-9773-3cd6852454e0
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Systems and applications must be monitored and analyzed to detect deviation from the access control requirements outlined in this policy and the Security Logging Standard, and record events to provide evidence and to reconstruct lost or damaged data.
+
+--- Record #94 ---
+ID: d522731f-7a96-47bc-a10f-f937eff74041
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Audit logs recording exceptions and other security-relevant events must be produced, protected and kept consistent with record retention schedules and requirements.
+
+--- Record #95 ---
+ID: e2324e93-2854-4943-b76c-c4e7ad9411ac
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Monitoring systems must be deployed (e.g., intrusion detection/prevention systems) at strategic locations to monitor inbound, outbound and internal network traffic.
+
+--- Record #96 ---
+ID: 03c33fc5-1111-43a9-a362-f9cc6ae7ef11
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Monitoring systems must be configured to alert incident response personnel to indications of compromise or potential compromise.
+
+--- Record #97 ---
+ID: 98d6ea45-e3e6-47ea-8152-8823a11eef04
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Contingency plans (e.g., business continuity plans, disaster recovery plans, continuity of operations plans) must be established and tested regularly.  At a se An evaluation of the criticality of systems used in information processing (including but not limited to software and operating systems, firewalls, switches, routers and other communication equipment). Recovery Time Objectives (RTO)/Recovery Point Objectives (RPO) for all critical systems.
+
+--- Record #98 ---
+ID: 26066669-730f-44f4-b808-f73e3fbade03
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Backup copies of entity information, software, and system images must be taken regularly in accordance with the entity’s defined requirements.
+
+--- Record #99 ---
+ID: 3668234f-721c-49ad-9b2b-314a81133131
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Backups and restoration must be tested regularly.  Separation of duties must be applied to these functions.
+
+--- Record #100 ---
+ID: b63bee18-d278-4139-bf9f-100e35f8e38b
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Procedures must be established to maintain information security during an adverse event.  For those controls that cannot be maintained, compensatory controls must be in place. Associated Standards: Secure Configuration Management Standard; Security Logging Standard; Cyber Incident Response Standard; Account Management/Access Control Standard 5.0 Compliance
+
+--- Record #101 ---
+ID: e0cc55ab-3370-46ff-a28f-e34bf2a8ad97
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+This policy shall take effect upon publication. Compliance is expected with all enterprise policies and standards. Policies and standards may be amended at any time; compliance with amended policies and standards is expected.
+
+--- Record #102 ---
+ID: 45f51af2-a205-46a7-8b05-cdf36cba3275
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+If compliance with this standard is not feasible or technically possible, or if deviation from this policy is necessary to support a business function, entities shall request an exception through the Chief Information Security Officer’s exception process. 6.0 Definitions of Key Terms 7.0 Contact Information Submit all inquiries and requests for future enhancements to the policy owner at: [Entity Address] 8.0 Revision History
+
+--- Record #103 ---
+ID: 7920b6d6-1c4c-4377-a4fe-38d0c85c9bab
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+This standard shall be subject to periodic review to ensure relevancy. 9.0 Related Documents National Institute of Standards and Technology (NIST) Special Publication 800-53, Security and Privacy Controls for Federal Information Systems and Organizations Internal Revenue Service Publication 1075: Tax Information Security Guidelines for Federal, State and Local Agencies
+
+================================================================================
+SEMANTICALLY SIMILAR RECORDS (Top matches by embedding similarity)
+================================================================================
+
+Found 5 similar records:
+
+--- Similar Record #1 (Similarity: 0.6021) ---
+ID: e354507b-64f0-42c0-85fb-db6096b3e69f
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+This policy defines the mandatory minimum information security requirements for the entity as defined below in Section 3.0 Scope. Any entity may, based on its individual business needs and specific legal and federal requirements, exceed the security requirements put forth in this document, but must, at a minimum, achieve the security levels required by this policy. This policy acts as an umbrella document to all other security policies and associated standards.  This policy defines the responsibility to: protect and maintain the confidentiality, integrity and availability of information and related infrastructure assets; manage the risk of security exposure or compromise; assure a secure and stable information technology (IT) environment; identify and respond to events involving information asset misuse, loss or unauthorized disclosure; monitor systems for anomalies that might indicate compromise; and promote and increase the awareness of information security. Failure to secure and protect the confidentiality, integrity and availability of information assets in today’s highly networked environment can damage or shut down systems that operate critical infrastructure, financial and business transactions and vital government functions; compromise data; and result in legal and regulatory non-compliance. This policy benefits entities by defining a framework that will assure appropriate measures are in place to protect the confidentiality, integrity and availability of data; and assure staff and all other affiliates understand their role and responsibilities, have adequate knowledge of security policy, procedures and practices and know how to protect information. 2.0 Authority [Organization information] 3.0 Scope This policy encompasses all systems, automated and manual, for which the entity has administrative responsibility, including systems managed or hosted by third parties on behalf of the entity. It addresses all information, regardless of the form or format, which is created or used in support of business activities. 4.0 Information Statement Organizational Security Information security requires both an information risk management function and an information technology security function.  Depending on the structure of the entity, an individual or group can serve in both roles or a separate individual or group can be designated for each role.  It is recommended that these functions be performed by a high-level executive or a group that includes high level executives.
+
+--- Similar Record #2 (Similarity: 0.4536) ---
+ID: 0bca4edd-71df-4190-9442-2d96f105c29e
+Domain: ISMS
+Subdomain: Security Assessment And Authorization Policy
+Source: Security-Assessment-and-Authorization-Policy.docx
+Text:
+This policy is applicable to all departments and users of IT resources and assets.  Every department that maintains or collects informational assets must be compliant with this policy. SECURITY ASSESSMENT AND AUTHORIZATION POLICY AND PROCEDURES
+
+--- Similar Record #3 (Similarity: 0.4513) ---
+ID: 69c09ce0-b272-4b2b-b3ee-68f31499011d
+Domain: ISMS
+Subdomain: Acceptable Use Of Information Technology Resources Policy
+Source: Acceptable-Use-of-Information-Technology-Resources-Policy.docx
+Text:
+All uses of information and information technology resources must comply with organizational policies, standards, procedures, and guidelines, as well as any applicable license agreements and laws including Federal, State, local and intellectual property laws. Consistent with the foregoing, the acceptable use of information and IT resources encompasses the following duties: Understanding the baseline information security controls necessary to protect the confidentiality, integrity, and availability of information; Protecting organizational information and resources from unauthorized use or disclosure; Protecting personal, private, sensitive, or confidential information from unauthorized use or disclosure; Observing authorized levels of access and utilizing only approved IT technology devices or services; and Immediately reporting suspected information security incidents or weaknesses to the appropriate manager and the Information Security Officer (ISO)/designated security representative. 4.1	Unacceptable Use The following list is not intended to be exhaustive, but is an attempt to provide a framework for activities that constitute unacceptable use. Users, however, may be exempted from one or more of these restrictions during their authorized job responsibilities, after approval from organizational management, in consultation with organization IT staff (e.g., storage of objectionable material in the context of a disciplinary matter). Unacceptable use includes, but is not limited to, the following: Unauthorized use or disclosure of personal, private, sensitive, and/or confidential information; Unauthorized use or disclosure of organization information and resources; Distributing, transmitting, posting, or storing any electronic communications, material or correspondence that is threatening, obscene, harassing, pornographic, offensive, defamatory, discriminatory, inflammatory, illegal, or intentionally false or inaccurate; Attempting to represent the organization in matters unrelated to official authorized job duties or responsibilities; Connecting unapproved devices to the organization’s network or any IT resource; Connecting organizational IT resources to unauthorized networks; Connecting to any wireless network while physically connected to the organization’s wired network; Installing, downloading, or running software that has not been approved following appropriate security, legal, and/or IT review in accordance with organizational policies;
+
+--- Similar Record #4 (Similarity: 0.4370) ---
+ID: a403e977-5733-4c89-930c-23af8e275af8
+Domain: ISMS
+Subdomain: Planning Policy
+Source: Planning-Policy.docx
+Text:
+IT Department shall: Develop a security plan for each information system that: Is consistent with the [entity’s] enterprise architecture. Defines explicitly the authorization boundary for the system. Describes the operational context of the information system in terms of missions and business processes. Provides the security categorization of the information system including supporting rationale. Describes the operational environment for the information system and relationships with or connections to other information systems. Provides an overview of the security requirements for the system. Identifies any relevant overlays, if applicable. Describes the security controls in place or planned for meeting those requirements including a rationale for the tailoring decisions. Is reviewed and approved by the authorizing official or designated representative prior to plan implementation. Distribute copies of the security plan and communicate subsequent changes to the plan to authorized personnel and/or business units. Review the security plan for the information system at least annually. Update the plan to address changes to the information system/environment of operation or problems identified during plan implementation or security control assessments. Protect the security plan from unauthorized disclosure and modification. RULES OF BEHAVIOR
+
+--- Similar Record #5 (Similarity: 0.4119) ---
+ID: cf9ac7a2-bf75-4d76-b62a-f37b7099f17a
+Domain: ISMS
+Subdomain: Information Security Policy
+Source: Information-Security-Policy.docx
+Text:
+Information security risk decisions must be made through consultation with both function areas described in a. above. Although the technical information security function may be outsourced to third parties, each entity retains overall responsibility for the security of the information that it owns. Functional Responsibilities Executive management is responsible for: evaluating and accepting risk on behalf of the entity; identifying information security responsibilities and goals and integrating them into relevant processes; supporting the consistent implementation of information security policies and standards; supporting security through clear direction and demonstrated commitment of appropriate resources; promoting awareness of information security best practices through the regular dissemination of materials provided by the ISO/designated security representative; implementing the process for determining information classification and categorization, based on industry recommended practices, organization directives, and legal and regulatory requirements, to determine the appropriate levels of protection for that information; implementing the process for information asset identification, handling, use, transmission, and disposal based on information classification and categorization; determining who will be assigned and serve as information owners while maintaining ultimate responsibility for the confidentiality, integrity, and availability of the data; participating in the response to security incidents; complying with notification requirements in the event of a breach of private information; adhering to specific legal and regulatory requirements related to information security; communicating legal and regulatory requirements to the ISO/designated security representative; and communicating requirements of this policy and the associated standards, including the consequences of non-compliance, to the workforce and third parties, and addressing adherence in third party agreements. The ISO/designated security representative is responsible for: maintaining familiarity with business functions and requirements; maintaining an adequate level of current knowledge and proficiency in information security through annual Continuing Professional Education (CPE) credits directly related to information security; assessing compliance with information security policies and legal and regulatory information security requirements; evaluating and understanding information security risks and how to appropriately manage those risks; representing and assuring security architecture considerations are addressed; advising on security issues related to procurement of products and services; escalating security concerns that are not being adequately addressed according to the applicable reporting and escalation procedures; disseminating threat information to appropriate parties; participating in the response to potential security incidents; participating in the development of enterprise policies and standards  that considers the entity’s needs; and promoting information security awareness. IT management is responsible for: supporting security by providing clear direction and consideration of security controls in the data processing infrastructure and computing network(s) which support the information owners; providing resources needed to maintain a level of information security control consistent with this policy; identifying and implementing all processes, policies and controls relative to security requirements defined by the business and this policy; implementing the proper controls for information owned based on the classification designations; providing training to appropriate technical staff on secure operations (e.g., secure coding, secure configuration); fostering the participation of information security and technical staff in protecting information assets, and in identifying, selecting and implementing appropriate and cost-effective security controls and procedures; and implementing business continuity and disaster recovery plans. The workforce is responsible for: understanding the baseline information security controls necessary to protect the confidentiality, integrity and availability of information entrusted; protecting  information and resources from unauthorized use or disclosure; protecting personal, private, sensitive information from unauthorized use or disclosure; abiding by Acceptable Use of Information Technology Resources Policy reporting suspected information security incidents or weaknesses to the appropriate manager and ISO/designated security representative. The CISO is responsible for: providing in-house expertise as security consultants  as needed; developing the security program and strategy, including measures of effectiveness; establishing and maintaining enterprise information security policy and standards; assessing compliance with security policies and standards; advising on secure system engineering; providing incident response coordination and expertise; monitoring networks for anomalies; monitoring external sources for indications of data breaches, defacements, etc. maintaining ongoing contact with security groups/associations and relevant authorities; providing timely notification of current threats and vulnerabilities; and providing awareness materials and training resources. Separation of Duties
+
+================================================================================
+END OF REPORT
+================================================================================
