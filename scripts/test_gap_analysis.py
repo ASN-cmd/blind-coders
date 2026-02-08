@@ -113,7 +113,7 @@ if __name__ == "__main__":
     base_dir = Path(__file__).resolve().parents[1]
     
     # Option 1: Use the PS_1_AS.pdf in the root directory
-    test_pdf = base_dir / "PS_1_AS.pdf"
+    test_pdf = base_dir / "policies/policy1.pdf"
     
     # Option 2: Use a PDF from the policies folder
     # test_pdf = base_dir / "policies" / "your-policy.pdf"

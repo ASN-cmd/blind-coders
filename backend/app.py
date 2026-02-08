@@ -8,6 +8,8 @@ from flask import Flask
 from flask_cors import CORS
 from backend.routes.upload_routes import upload_bp
 from backend.routes.health_routes import health_bp
+from backend.routes.analyze_domain import analyze_bp
+
 def create_app():
     app = Flask(__name__)
     CORS(app)
@@ -17,6 +19,7 @@ def create_app():
     app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16MB
     app.register_blueprint(health_bp, url_prefix="/api")
     app.register_blueprint(upload_bp, url_prefix="/api")
+    app.register_blueprint(analyze_bp, url_prefix="/api")
 
     return app
 
