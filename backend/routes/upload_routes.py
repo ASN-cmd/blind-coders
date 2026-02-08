@@ -37,9 +37,18 @@ def upload_pdf():
     output_lines = []
     output_lines.append(f"TOTAL DOMAIN CHUNKS: {len(domain_chunks)}")
 
-    for domain, text in domain_chunks.items():
-        output_lines.append(f"\n==== {domain} ====")
-        output_lines.append(text[:800])  # limit size
+    for domain, obj in domain_chunks.items():
+        output_lines.append(f"==== {domain} ====")
+
+        # Optional: show subdomains
+        subdomains = obj.get("subdomains", [])
+        if subdomains:
+            output_lines.append("Subdomains:")
+            for sd in subdomains:
+                output_lines.append(f"- {sd}")
+
+        output_lines.append("\nText:")
+        output_lines.append(obj["text"][:800])  # slice the STRING
 
     final_text = "\n".join(output_lines)
 
