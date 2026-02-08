@@ -1,21 +1,38 @@
 import json
 import re
+import os
 from backend.config.prompts import DOMAIN_CHUNKING_PROMPT
 from backend.llm.mistral_client import call_llm
 
 
 def extract_json(text: str):
+    """Extract JSON object from LLM output safely."""
     match = re.search(r"\{.*\}", text, re.DOTALL)
     if not match:
         return None
-    return json.loads(match.group())
+    try:
+        return json.loads(match.group())
+    except json.JSONDecodeError:
+        return None
 
 
-def chunk_by_domain(policy_text: str) -> dict:
+def chunk_by_domain(policy_text: str) -> list:
+    """
+    Chunk policy text by domain.
+
+    Returns a LIST of objects in this format:
+    {
+      "domain": "ISMS",
+      "text": "...",
+      "subdomains": [...]
+    }
+    """
+
     prompt = DOMAIN_CHUNKING_PROMPT.format(policy_text=policy_text)
     response = call_llm(prompt)
 
-    # 1️⃣ KEEP RAW OUTPUT (for teammates / audit)
+    # 1️⃣ KEEP RAW OUTPUT (audit/debug)
+    os.makedirs("logs", exist_ok=True)
     with open("logs/domain_chunking_raw.log", "a", encoding="utf-8") as f:
         f.write("\n==== RAW LLM OUTPUT ====\n")
         f.write(response)
@@ -24,26 +41,35 @@ def chunk_by_domain(policy_text: str) -> dict:
     # 2️⃣ PARSE JSON
     data = extract_json(response)
     if not data:
-        return {}
+        return []
 
-    # 3️⃣ NORMALIZE (this is what pipeline uses)
-    normalized = {}
+    # 3️⃣ NORMALIZE TO REQUIRED FORMAT
+    normalized_output = []
 
     for domain, obj in data.items():
         if not obj:
             continue
 
+        # Expecting:
+        # {
+        #   "text": [...],
+        #   "subdomains": [...]
+        # }
+
         text_items = obj.get("text", [])
         subdomains = obj.get("subdomains", [])
 
-        text = " ".join(t.strip() for t in text_items if t.strip())
+        combined_text = " ".join(
+            t.strip() for t in text_items if isinstance(t, str) and t.strip()
+        )
 
-        if text:
-            normalized[domain] = {
-                "text": text,
-                "subdomains": subdomains
-            }
+        if not combined_text:
+            continue
 
-    return normalized
+        normalized_output.append({
+            "domain": domain,
+            "text": combined_text,
+            "subdomains": subdomains
+        })
 
-
+    return normalized_output
