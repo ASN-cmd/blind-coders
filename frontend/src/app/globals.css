@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Enterprise Security Dark Palette */
+  --color-canvas-base: #0f172a;
+  /* Deep Navy Background */
+  --color-canvas-subtle: #1e293b;
+  /* Sidebar/Panel Background */
+  --color-border-subtle: #334155;
+  /* Subtle Divider */
+  --color-border-hover: #475569;
+  /* Hover State */
+
+  --color-brand-primary: #3b82f6;
+  /* Professional Blue */
+  --color-brand-secondary: #6366f1;
+  /* Indigo Accent */
+
+  --color-status-success: #10b981;
+  /* Valid Green */
+  --color-status-warning: #f59e0b;
+  /* Attention Yellow */
+  --color-status-danger: #ef4444;
+  /* Critical Red */
+
+  --color-fg-primary: #f8fafc;
+  /* Main Text */
+  --color-fg-secondary: #94a3b8;
+  /* Helper Text */
+  --color-fg-tertiary: #64748b;
+  /* Disabled/Meta Text */
+}
+
+@layer base {
+  body {
+    font-family: var(--font-inter);
+    background-color: var(--color-canvas-base);
+    color: var(--color-fg-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Glass Surface (Subtle) */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Refined Typography */
+.text-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-fg-secondary);
+}
+
+/* Interactive Elements */
+.interactive-item {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-item:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: var(--color-border-hover);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-enter {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-primary);
+}

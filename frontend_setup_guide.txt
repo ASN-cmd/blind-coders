@@ -1,0 +1,32 @@
+# Frontend Setup & Run Guide for PolicyGuard
+
+## Prerequisites
+- Node.js (v18 or higher)
+- npm (Node Package Manager)
+
+## Installation
+1. Navigate to the frontend directory:
+   cd frontend
+
+2. Install dependencies:
+   npm install
+
+## Running the Application (Development Mode)
+To start the development server with hot-reload:
+   npm run dev
+
+Access the application at: http://localhost:3000
+
+## Production Build
+To build the application for production:
+   npm run build
+   npm start
+
+## Common Commands
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run lint`: Check for code issues
+
+## Troubleshooting
+- If you see "Hydration failed" errors, refresh the page. This can occasionally happen due to browser extensions.
+- Ensure the Backend server is running on port 5000 for API calls to work.
