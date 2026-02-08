@@ -6,4 +6,4 @@ llm = AutoModelForCausalLM.from_pretrained(
     model_type="mistral"
 )
 
-print(llm("What is Reliance?"))
+print(llm("What is UNESCO?"))
