@@ -1,0 +1,55 @@
+================================================================================
+CHROMADB EMBEDDINGS SUMMARY
+Generated: 2026-02-08 10:55:55
+Collection: nist_controls
+Total Records: 639
+================================================================================
+
+COUNTS BY DOMAIN:
+----------------------------------------
+  Data Privacy & Security: 41
+  ISMS: 567
+  Patch Management: 15
+  Risk Management: 16
+
+
+COUNTS BY SUBDOMAIN:
+----------------------------------------
+  Acceptable Use Of Information Technology Resources Policy: 19
+  Access Control Policy: 19
+  Account Management Access Control: 40
+  Auditing And Accountability Policy: 28
+  Authentication Tokens: 25
+  Computer Security Threat Response Policy: 18
+  Configuration Management Policy: 12
+  Contingency Planning Policy: 10
+  Cyber Incident Response: 21
+  Encryption: 19
+  Identification And Authentication Policy: 11
+  Incident Response Policy: 9
+  Information Classification: 22
+  Information Security Policy: 103
+  Information Security Risk Management: 11
+  Maintenance Policy: 8
+  Media Protection Policy: 7
+  Mobile Device Security: 13
+  Patch Management: 15
+  Personnel Security Policy: 10
+  Physical And Environmental Protection Policy: 18
+  Planning Policy: 6
+  Remote Access: 12
+  Risk Assessment Policy: 5
+  Sanitization Secure Disposal: 18
+  Secure Configuration: 9
+  Secure System Development Life Cycle: 40
+  Security Assessment And Authorization Policy: 10
+  Security Awareness And Training Policy: 10
+  Security Logging: 22
+  System And Communications Protection Policy: 20
+  System And Information Integrity Policy: 14
+  System And Services Acquisition Policy: 13
+  Vulnerability Scanning: 22
+
+================================================================================
+END OF SUMMARY
+================================================================================
