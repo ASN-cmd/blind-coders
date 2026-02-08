@@ -66,3 +66,33 @@ Output JSON format:
   "confidence": <value between 0 and 1>
 }}
 """
+
+DOMAIN_CHUNKING_PROMPT = """
+You are a cybersecurity policy analysis system.
+
+Read the organizational policy text below and group the content
+into the following FOUR domains:
+
+1. Information Security Management System (ISMS)
+2. Data Privacy and Security
+3. Patch Management
+4. Risk Management
+
+Instructions:
+- Assign each sentence or paragraph to the most relevant domain
+- Combine all related content under the same domain
+- Do not invent content
+- If a domain is not mentioned, leave it empty
+- Do not explain your reasoning
+
+Policy Text:
+{policy_text}
+
+At the end, return the result as JSON in the following format:
+{{
+  "ISMS": [],
+  "Data Privacy and Security": [],
+  "Patch Management": [],
+  "Risk Management": []
+}}
+"""
