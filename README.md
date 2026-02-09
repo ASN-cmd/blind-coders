@@ -89,20 +89,20 @@ This system provides an offline, secure environment for auditing cybersecurity p
     ```
 
 ### 2. Model Setup
-    
-    Download the quantized LLM (Mistral-7B) to the `models/` directory:
 
-    ```bash
-    python scripts/download_model.py
-    ```
+Download the quantized LLM (Mistral-7B) to the `models/` directory:
+
+```bash
+python scripts/download_model.py
+```
 
 ### 3. Database Initialization
-    
-    Ingest the NIST SP 800-53 controls into the local ChromaDB vector store:
 
-    ```bash
-    python backend/ingest/nist_ingest.py
-    ```
+Ingest the NIST SP 800-53 controls into the local ChromaDB vector store:
+
+```bash
+python backend/ingest/nist_ingest.py
+```
 
 ### 4. Frontend Setup
 
