@@ -117,7 +117,7 @@ This system provides an offline, secure environment for auditing cybersecurity p
 ## Workflow
 
 1.  **Upload:** User uploads a policy PDF via the frontend.
-2.  **Partitoining (Backend):** 
+2.  **Partitioning (Backend):** 
     *   `PyPDF2` (or `pytesseract`) extracts raw text.
     *   Local LLM partitions text into domains (ISMS, Risk, etc.) & subdomains.
 3.  **Selection (Frontend):** 
@@ -146,8 +146,8 @@ Each entry in the JSON represents a specific policy chunk mapped to our 4-domain
 {
   "id": "uuid-v4-string",
   "text": "Full extracted text of the policy control...",
-  "domain": "Access Control",
-  "subdomain": "Least-Privilege-Principle",
+  "domain": "Data Privacy & Security",
+  "subdomain": "Access-Control-Policy",
   "source_file": "CISecurity"
 }
 ```
@@ -156,12 +156,12 @@ Each entry in the JSON represents a specific policy chunk mapped to our 4-domain
 We manually and algorithmically mapped thousands of controls into **4 Primary Domains** and **Unique Subdomains**:
 1.  **ISMS (Information Security Management System)**
     *   *Subdomains:* Security Awareness, Incident Response, Personnel Security, etc.
-2.  **Access Control**
-    *   *Subdomains:* Account Management, Least Privilege, Remote Access, etc.
+2.  **Data Privacy & Security**
+    *   *Subdomains:* Access Control, Encryption, Media Protection, Data Retention, etc.
 3.  **Risk Management**
     *   *Subdomains:* Risk Assessment, Vulnerability Scanning, Audit Logging, etc.
-4.  **Data Privacy & Security**
-    *   *Subdomains:* Encryption, Media Protection, Data Retention, etc.
+4.  **Patch Management**
+    *   *Subdomains:* Vulnerability Scanning, Secure Configuration, System Updates, etc.
 
 This JSON acts as the "Ground Truth" for the RAG system.
 
@@ -213,14 +213,14 @@ graph TD
         DOMAINS -->|Cache| LOCAL[(LocalStorage)]
         
         DOMAINS -- "ISMS" --> D1[Domain 1]
-        DOMAINS -- "Access Control" --> D2[Domain 2]
+        DOMAINS -- "Data Privacy" --> D2[Domain 2]
         DOMAINS -- "Risk Mgmt" --> D3[Domain 3]
-        DOMAINS -- "Data Privacy" --> D4[Domain 4]
+        DOMAINS -- "Patch Mgmt" --> D4[Domain 4]
     end
 
     subgraph "Engine 2: Semantic Analysis (RAG)"
         LOCAL -->|Select| D2
-        D2 -->|Vectorize| EMB[Encryption Model]
+        D2 -->|Vectorize| EMB[Embedding Model]
         
         DB[(ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[Relevant NIST Controls]
         EMB -.->|Semantic Search| DB
