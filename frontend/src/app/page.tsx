@@ -99,10 +99,10 @@ export default function EnterpriseDashboard() {
               >
                 <div className="space-y-4 text-center lg:text-left mt-4">
                   <h1 className="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 tracking-tight mb-2 drop-shadow-sm">
-                    Security Control Center
+                    Secure AI Policy Compliance & Gap Analysis System
                   </h1>
                   <p className="text-base lg:text-lg max-w-3xl leading-relaxed text-slate-400 mx-auto lg:mx-0">
-                    Next-generation policy analysis platform aligned with NIST SP 800-53 standards.
+                    Next-generation policy analysis platform running entirely offline for complete data privacy.
                   </p>
                 </div>
 
