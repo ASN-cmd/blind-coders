@@ -202,15 +202,15 @@ This "Double Engine" ensures we don't just "chat" with the PDF—we structurally
 ```mermaid
 graph TD
     subgraph "User Input"
-        PDF[📂 Upload Policy PDF]
+        PDF[Upload Policy PDF]
     end
 
     subgraph "Engine 1: Domain Partitioning"
         PDF -->|Text Extraction| RAW[Raw Text]
-        RAW -->|LLM Inference| PART[🤖 Mistral-7B Partitioning]
-        PART -->|JSON| DOMAINS[🏷️ Structured Domains]
+        RAW -->|LLM Inference| PART[Mistral-7B Partitioning]
+        PART -->|JSON| DOMAINS[Structured Domains]
         
-        DOMAINS -->|Cache| LOCAL[(💾 LocalStorage)]
+        DOMAINS -->|Cache| LOCAL[(LocalStorage)]
         
         DOMAINS -- "ISMS" --> D1[Domain 1]
         DOMAINS -- "Access Control" --> D2[Domain 2]
@@ -220,20 +220,20 @@ graph TD
 
     subgraph "Engine 2: Semantic Analysis (RAG)"
         LOCAL -->|Select| D2
-        D2 -->|Vectorize| EMB[🔢 Encryption Model]
+        D2 -->|Vectorize| EMB[Encryption Model]
         
-        DB[(🗄️ ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[📄 Relevant NIST Controls]
+        DB[(ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[Relevant NIST Controls]
         EMB -.->|Semantic Search| DB
         
-        REL -->|Context| GAP[🔍 Gap Analysis LLM]
+        REL -->|Context| GAP[Gap Analysis LLM]
         D2 -->|Policy Query| GAP
     end
 
     subgraph "Output"
-        GAP -->|JSON| REPORT[📊 Compliance Report]
-        REPORT -->|Display| UI[🖥️ Frontend Dashboard]
-        UI -->|Click| DL[📥 Download PDF Report]
-        UI -->|View| ROADMAP[📝 Implementation Roadmap]
+        GAP -->|JSON| REPORT[Compliance Report]
+        REPORT -->|Display| UI[Frontend Dashboard]
+        UI -->|Click| DL[Download PDF Report]
+        UI -->|View| ROADMAP[Implementation Roadmap]
     end
 
     style PDF fill:#f9f,stroke:#333,stroke-width:2px,color:#000
@@ -241,13 +241,5 @@ graph TD
     style LOCAL fill:#f9f,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5,color:#000
     style GAP fill:#bbf,stroke:#333,stroke-width:2px,color:#000
     style DB fill:#bfb,stroke:#333,stroke-width:2px,color:#000
-    *   `PyPDF2` (or `pytesseract`) extracts raw text.
-    *   Local LLM partitions text into domains (ISMS, Risk, etc.) & subdomains.
-3.  **Selection (Frontend):** User selects a domain to analyze.
-4.  **Analysis (Backend):**
-    *   Text is converted to embeddings via `Sentence-Transformers`.
-    *   `ChromaDB` retrieves relevant NIST controls.
-    *   Local LLM compares policy vs. NIST controls to find gaps.
-5.  **Results (Frontend):** Dashboard displays compliance score, gaps, and roadmap.
-
----
+    style DL fill:#ffdfba,stroke:#333,stroke-width:2px,color:#000
+```
