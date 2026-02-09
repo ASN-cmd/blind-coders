@@ -4,7 +4,7 @@ A comprehensive, privacy-first solution for analyzing organizational policies ag
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 This system provides an offline, secure environment for auditing cybersecurity policies. It uses a local Large Language Model (Mistral-7B) and vector embeddings to autonomously partition policy documents, map them to NIST controls, detect compliance gaps, and generate actionable remediation roadmaps.
 
@@ -16,7 +16,7 @@ This system provides an offline, secure environment for auditing cybersecurity p
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### **Backend (Python)**
 *Core logic, AI inference, and API handling.*
@@ -62,14 +62,14 @@ This system provides an offline, secure environment for auditing cybersecurity p
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 *   **Python:** 3.11+
 *   **Node.js:** 18+ & npm
 *   **Hardware:** Minimum 8GB RAM (16GB recommended for smooth LLM inference) on CPU. No GPU required.
 *   **System Tools:** Tesseract-OCR installed and added to system PATH.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Backend Setup
 
@@ -113,7 +113,7 @@ This system provides an offline, secure environment for auditing cybersecurity p
 
 ---
 
-## 🔄 Workflow
+## Workflow
 
 1.  **Upload:** User uploads a policy PDF via the frontend.
 2.  **Partitoining (Backend):** 
@@ -128,7 +128,7 @@ This system provides an offline, secure environment for auditing cybersecurity p
 
 ---
 
-## 🧠 Technical Deep Dive: The "Double Engine" Architecture
+## Technical Deep Dive: The "Double Engine" Architecture
 
 The core of our solution relies on a dual-process architecture (the "Double Engine"): **Autonomous Domain Partitioning** followed by **Semantic Control Mapping**.
 
@@ -203,8 +203,8 @@ graph TD
 
     subgraph "Engine 1: Domain Partitioning"
         PDF -->|Text Extraction| RAW[Raw Text]
-        RAW -->|LLM Inference| PART[🤖 Mistral-7B Partitioning]
-        PART -->|JSON| DOMAINS[🏷️ Structured Domains]
+        RAW -->|LLM Inference| PART[Mistral-7B Partitioning]
+        PART -->|JSON| DOMAINS[Structured Domains]
         
         DOMAINS -- "ISMS" --> D1[Domain 1]
         DOMAINS -- "Access Control" --> D2[Domain 2]
@@ -213,23 +213,23 @@ graph TD
     end
 
     subgraph "Engine 2: Semantic Analysis (RAG)"
-        D2 -->|Vectorize| EMB[🔢 Encryption Model]
+        D2 -->|Vectorize| EMB[Encryption Model]
         
-        DB[(🗄️ ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[📄 Relevant NIST Controls]
+        DB[(ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[Relevant NIST Controls]
         EMB -.->|Semantic Search| DB
         
-        REL -->|Context| GAP[🔍 Gap Analysis LLM]
+        REL -->|Context| GAP[Gap Analysis LLM]
         D2 -->|Policy Query| GAP
     end
 
     subgraph "Output"
-        GAP -->|JSON| REPORT[📊 Compliance Report]
-        REPORT -->|Display| UI[🖥️ Frontend Dashboard]
-        REPORT -->|Download| ROADMAP[📝 Implementation Roadmap]
+        GAP -->|JSON| REPORT[Compliance Report]
+        REPORT -->|Display| UI[Frontend Dashboard]
+        REPORT -->|Download| ROADMAP[Implementation Roadmap]
     end
 
-    style PDF fill:#f9f,stroke:#333,stroke-width:2px
-    style PART fill:#bbf,stroke:#333,stroke-width:2px
-    style GAP fill:#bbf,stroke:#333,stroke-width:2px
-    style DB fill:#bfb,stroke:#333,stroke-width:2px
+    style PDF fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+    style PART fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+    style GAP fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+    style DB fill:#bfb,stroke:#333,stroke-width:2px,color:#000
 ```
