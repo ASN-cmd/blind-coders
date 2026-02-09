@@ -25,7 +25,7 @@ This system provides an offline, secure environment for auditing cybersecurity p
 | :--- | :--- | :--- | :--- |
 | **Framework** | **Flask** | Latest | Lightweight WSGI web application framework for the REST API. |
 | **CORS** | **Flask-CORS** | Latest | Handles Cross-Origin Resource Sharing for frontend communication. |
-| **LLM Inference** | **CTransformers** | `0.2.27` | Runs quantized GGML/GGUF models (Mistral-7B) efficiently on CPU. |
+| **LLM Inference** | **llama-cpp-python** | `0.2.82` | Runs quantized GGUF models (Mistral-7B) efficiently on CPU. |
 | **Embeddings** | **Sentence-Transformers** | `5.2.2` | Generates 384-dimensional embeddings using `all-MiniLM-L6-v2`. |
 | **Vector Database** | **ChromaDB** | `1.4.1` | Local vector store for indexing and retrieving NIST SP 800-53 controls. |
 | **PDF Processing** | **PyPDF2** | Latest | Extracts text from standard PDF documents. |
@@ -47,6 +47,7 @@ This system provides an offline, secure environment for auditing cybersecurity p
 | **Icons** | **Lucide React** | `0.563.0` | Consistent, lightweight icon set. |
 | **Animations** | **Framer Motion** | `12.33.0` | Production-ready motion library for React. |
 | **HTTP Client** | **Axios** | `1.13.5` | Promise-based HTTP client for API requests. |
+| **PDF Generation** | **jspdf** / **jspdf-autotable** | Latest | Generates downloadable PDF reports directly in the browser. |
 | **Utilities** | **clsx** | `2.1.1` | Utility for constructing `className` strings conditionally. |
 | **Utilities** | **tailwind-merge** | `3.4.0` | Merges Tailwind CSS classes without style conflicts. |
 | **Linting** | **ESLint** | `9.0` | Pluggable linting utility for JavaScript and TypeScript. |
@@ -118,17 +119,20 @@ This system provides an offline, secure environment for auditing cybersecurity p
 1.  **Upload:** User uploads a policy PDF via the frontend.
 2.  **Partitoining (Backend):** 
     *   `PyPDF2` (or `pytesseract`) extracts raw text.
-    *   Local LLM partitions text into domains (ISMS, Risk, etc.).
-3.  **Selection (Frontend):** User selects a domain to analyze.
+    *   Local LLM partitions text into domains (ISMS, Risk, etc.) & subdomains.
+3.  **Selection (Frontend):** 
+    *   Extracted domains are cached in `localStorage` for quick access.
+    *   User selects a specific domain to analyze.
 4.  **Analysis (Backend):**
     *   Text is converted to embeddings via `Sentence-Transformers`.
     *   `ChromaDB` retrieves relevant NIST controls.
     *   Local LLM compares policy vs. NIST controls to find gaps.
 5.  **Results (Frontend):** Dashboard displays compliance score, gaps, and roadmap.
+6.  **Report:** User downloads a detailed PDF report of the findings.
 
 ---
 
-## Technical Deep Dive: The "Double Engine" Architecture
+## The "Double Engine" Architecture
 
 The core of our solution relies on a dual-process architecture (the "Double Engine"): **Autonomous Domain Partitioning** followed by **Semantic Control Mapping**.
 
@@ -198,13 +202,15 @@ This "Double Engine" ensures we don't just "chat" with the PDF—we structurally
 ```mermaid
 graph TD
     subgraph "User Input"
-        PDF[📂 Upload Policy PDF]
+        PDF[Upload Policy PDF]
     end
 
     subgraph "Engine 1: Domain Partitioning"
         PDF -->|Text Extraction| RAW[Raw Text]
         RAW -->|LLM Inference| PART[Mistral-7B Partitioning]
         PART -->|JSON| DOMAINS[Structured Domains]
+        
+        DOMAINS -->|Cache| LOCAL[(LocalStorage)]
         
         DOMAINS -- "ISMS" --> D1[Domain 1]
         DOMAINS -- "Access Control" --> D2[Domain 2]
@@ -213,6 +219,7 @@ graph TD
     end
 
     subgraph "Engine 2: Semantic Analysis (RAG)"
+        LOCAL -->|Select| D2
         D2 -->|Vectorize| EMB[Encryption Model]
         
         DB[(ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[Relevant NIST Controls]
@@ -225,11 +232,14 @@ graph TD
     subgraph "Output"
         GAP -->|JSON| REPORT[Compliance Report]
         REPORT -->|Display| UI[Frontend Dashboard]
-        REPORT -->|Download| ROADMAP[Implementation Roadmap]
+        UI -->|Click| DL[Download PDF Report]
+        UI -->|View| ROADMAP[Implementation Roadmap]
     end
 
     style PDF fill:#f9f,stroke:#333,stroke-width:2px,color:#000
     style PART fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+    style LOCAL fill:#f9f,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5,color:#000
     style GAP fill:#bbf,stroke:#333,stroke-width:2px,color:#000
     style DB fill:#bfb,stroke:#333,stroke-width:2px,color:#000
+    style DL fill:#ffdfba,stroke:#333,stroke-width:2px,color:#000
 ```
