@@ -88,13 +88,25 @@ This system provides an offline, secure environment for auditing cybersecurity p
     pip install -r requirements.txt
     ```
 
-3.  Start the backend API:
     ```bash
-    python backend/app.py
+    pip install -r requirements.txt
     ```
-    *Server runs at `http://localhost:5000`*
 
-### 2. Frontend Setup
+### 2. Model Setup
+    
+    Download the quantized LLM (Mistral-7B) to the `models/` directory:
+    ```bash
+    python scripts/download_model.py
+    ```
+
+### 3. Database Initialization
+    
+    Ingest the NIST SP 800-53 controls into the local ChromaDB vector store:
+    ```bash
+    python backend/ingest/nist_ingest.py
+    ```
+
+### 4. Frontend Setup
 
 1.  Navigate to the frontend directory:
     ```bash
@@ -111,6 +123,31 @@ This system provides an offline, secure environment for auditing cybersecurity p
     npm run dev
     ```
     *App runs at `http://localhost:3000`*
+
+### 5. Backend Start
+
+1.  Start the backend API (ensure venv is active):
+    ```bash
+    python backend/app.py
+    ```
+    *Server runs at `http://localhost:5000`*
+
+## Verification & Testing
+
+To verify the pipeline without the frontend, use the provided test scripts:
+
+### Test Gap Analysis Pipeline
+Runs the full PDF processing and gap analysis flow on a sample policy:
+```bash
+python scripts/test_gap_analysis.py
+```
+*Note: Ensure a valid PDF exists at `policies/policy1.pdf` or update the script path.*
+
+### Quick System Check
+Verifies that all modules (LLM, ChromaDB, Embeddings) are loading correctly:
+```bash
+python scripts/check_db.py
+```
 
 ---
 
