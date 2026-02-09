@@ -125,3 +125,111 @@ This system provides an offline, secure environment for auditing cybersecurity p
     *   `ChromaDB` retrieves relevant NIST controls.
     *   Local LLM compares policy vs. NIST controls to find gaps.
 5.  **Results (Frontend):** Dashboard displays compliance score, gaps, and roadmap.
+
+---
+
+## 🧠 Technical Deep Dive: The "Double Engine" Architecture
+
+The core of our solution relies on a dual-process architecture (the "Double Engine"): **Autonomous Domain Partitioning** followed by **Semantic Control Mapping**.
+
+### 1. Generating the NIST/CIS Knowledge Base
+
+We transformed the raw NIST SP 800-53 and CIS implementation guidelines into a structured, machine-searchable JSON format (`backend/data/cis_policy_chunks_clean.json`).
+
+**The Data Structure:**
+Each entry in the JSON represents a specific policy chunk mapped to our 4-domain taxonomy:
+```json
+{
+  "id": "uuid-v4-string",
+  "text": "Full extracted text of the policy control...",
+  "domain": "Access Control",
+  "subdomain": "Least-Privilege-Principle",
+  "source_file": "CISecurity"
+}
+```
+
+**The Mapping Strategy:**
+We manually and algorithmically mapped thousands of controls into **4 Primary Domains** and **Unique Subdomains**:
+1.  **ISMS (Information Security Management System)**
+    *   *Subdomains:* Security Awareness, Incident Response, Personnel Security, etc.
+2.  **Access Control**
+    *   *Subdomains:* Account Management, Least Privilege, Remote Access, etc.
+3.  **Risk Management**
+    *   *Subdomains:* Risk Assessment, Vulnerability Scanning, Audit Logging, etc.
+4.  **Data Privacy & Security**
+    *   *Subdomains:* Encryption, Media Protection, Data Retention, etc.
+
+This JSON acts as the "Ground Truth" for the RAG system.
+
+### 2. Semantic Embedding & Storage (ChromaDB)
+
+Once the JSON structure was finalized, we ingested it into **ChromaDB** using **Sentence-Transformers**.
+
+*   **Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2`
+*   **Dimensionality:** 384-dimensional dense vectors.
+
+**The Process:**
+1.  **Ingestion Script:** `backend/ingest/nist_ingest.py` reads the JSON.
+2.  **Vectorization:** Each `text` block is passed through the model to create a vector.
+    *   *Example:* "Ensure users have unique IDs" → `[0.12, -0.45, 0.88, ...]`
+3.  **Storage:** The vector + original metadata (domain, subdomain) is stored in the local ChromaDB instance (`backend/db/chroma`).
+
+### 3. The "Double Engine" Execution Flow
+
+When a user uploads a PDF, the system executes two distinct AI processes:
+
+**Engine 1: Domain Partitioning (The Structure)**
+*   **Input:** Raw unstructured text from the PDF.
+*   **Action:** The local **Mistral-7B LLM** reads the text and logically segments it into the 4 primary domains.
+*   **Output:** Structured JSON separating the user's messy policy into clean buckets (e.g., "This paragraph belongs to Risk Management").
+
+**Engine 2: Semantic Retrieval & Traceability (The Analysis)**
+*   **Input:** The "Risk Management" chunk from Engine 1.
+*   **Action:**
+    1.  The chunk is converted into a vector query.
+    2.  **ChromaDB** searches its 384-dimensional space to find the *closest* NIST controls (stored in Step 2).
+    3.  A "Similarity Score" (0 to 1) determines relevance.
+*   **Output:** The LLM receives the user's policy segment + the *exact* matching NIST controls and performs the Gap Analysis.
+
+This "Double Engine" ensures we don't just "chat" with the PDF—we structurally analyze it against a hard-coded regulatory framework.
+
+### 4. Visual Execution Flow
+
+```mermaid
+graph TD
+    subgraph "User Input"
+        PDF[📂 Upload Policy PDF]
+    end
+
+    subgraph "Engine 1: Domain Partitioning"
+        PDF -->|Text Extraction| RAW[Raw Text]
+        RAW -->|LLM Inference| PART[🤖 Mistral-7B Partitioning]
+        PART -->|JSON| DOMAINS[🏷️ Structured Domains]
+        
+        DOMAINS -- "ISMS" --> D1[Domain 1]
+        DOMAINS -- "Access Control" --> D2[Domain 2]
+        DOMAINS -- "Risk Mgmt" --> D3[Domain 3]
+        DOMAINS -- "Data Privacy" --> D4[Domain 4]
+    end
+
+    subgraph "Engine 2: Semantic Analysis (RAG)"
+        D2 -->|Vectorize| EMB[🔢 Encryption Model]
+        
+        DB[(🗄️ ChromaDB NIST Store)] -.->|Retrieve Top-K| REL[📄 Relevant NIST Controls]
+        EMB -.->|Semantic Search| DB
+        
+        REL -->|Context| GAP[🔍 Gap Analysis LLM]
+        D2 -->|Policy Query| GAP
+    end
+
+    subgraph "Output"
+        GAP -->|JSON| REPORT[📊 Compliance Report]
+        REPORT -->|Display| UI[🖥️ Frontend Dashboard]
+        REPORT -->|Download| ROADMAP[📝 Implementation Roadmap]
+    end
+
+    style PDF fill:#f9f,stroke:#333,stroke-width:2px
+    style PART fill:#bbf,stroke:#333,stroke-width:2px
+    style GAP fill:#bbf,stroke:#333,stroke-width:2px
+    style DB fill:#bfb,stroke:#333,stroke-width:2px
+```
