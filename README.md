@@ -218,7 +218,7 @@ graph TD
         DOMAINS -- "Patch Mgmt" --> D4[Domain 4]
     end
 
-    subgraph "Engine 2: Semantic Analysis (RAG)"
+    subgraph "Engine 2: Iterative Gap Analysis (RAG)"
         LOCAL -->|Select| D2
         D2 -->|Vectorize| EMB[Embedding Model]
         
@@ -227,10 +227,14 @@ graph TD
         
         REL -->|Context| GAP[Gap Analysis LLM]
         D2 -->|Policy Query| GAP
+        
+        GAP -->|Analyze| CHECK{Gaps Found?}
+        CHECK -- Yes --> REVISE[Generate Revised Policy]
+        REVISE -->|Iterate| GAP
+        CHECK -- No --> REPORT[Final Compliance Report]
     end
 
     subgraph "Output"
-        GAP -->|JSON| REPORT[Compliance Report]
         REPORT -->|Display| UI[Frontend Dashboard]
         UI -->|Click| DL[Download PDF Report]
         UI -->|View| ROADMAP[Implementation Roadmap]
@@ -242,4 +246,6 @@ graph TD
     style GAP fill:#bbf,stroke:#333,stroke-width:2px,color:#000
     style DB fill:#bfb,stroke:#333,stroke-width:2px,color:#000
     style DL fill:#ffdfba,stroke:#333,stroke-width:2px,color:#000
+    style CHECK fill:#ffecb3,stroke:#333,stroke-width:2px,color:#000
+    style REVISE fill:#ffecb3,stroke:#333,stroke-width:2px,color:#000
 ```
